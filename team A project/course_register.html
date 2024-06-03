@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>course_register</title>
+</head>
+<body>
+    <header>
+        <ul class="header-list" style="list-style: none;">
+            <li>管理者名</li>
+            <li>口座一覧</li>
+            <li>ログアウト</li>
+        </ul>
+    </header>
+    <main>
+        <section>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div>
+                    <h2>講座登録</h2>
+                </div>
+                <div>
+                    <input type="file" name="course_image">
+                </div>
+                <div>
+                    <label for="course_name">講座名</label>
+                    <input type="text" name="course_name" id="course_name" placeholder="講座名">
+                </div>
+                <div>
+                    <label for="amount">料金</label>
+                    <input type="text" name="amount" id="amount" placeholder="金額">
+                </div>
+                <div>
+                    <label for="starting_date">講座開始日</label>
+                    <input type="date" name="starting_date" id="starting_date" >
+                </div>
+                <div>
+                    <label for="starting_time">講座開始時間</label>
+                    <input type="time" name="starting_time" id="starting_time">
+                </div>
+                <div>
+                    <label for="ending_time">講座終了時間</label>
+                    <input type="time" name="ending_time" id="ending_time">
+                </div>
+                <div>
+                    <label for="detail">詳細内容</label>
+                    <textarea name="detail" id="detail" placeholder="講座内容紹介"></textarea>
+                </div>
+                <div>
+                    <button>登録</button>
+                </div>
+                <div>
+                    <button>戻る</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+    </footer>
+</body>
+</html>
