@@ -1,2 +1,3 @@
-figmaで画面を作ります
-https://www.figma.com/login?is_not_gen_0=true
+2024/06/04 14:32
+ゴサイフォン
+誤字修正とファイルの入れ替え
