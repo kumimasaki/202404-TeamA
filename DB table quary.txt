@@ -1,0 +1,68 @@
+-- adminテーブル作成クエリ
+CREATE TABLE IF NOT EXISTS public.admin
+(
+    admin_id bigint NOT NULL,
+    admin_name VARCHAR(255) NOT NULL,
+    admin_email VARCHAR(255) NOT NULL,
+    admin_password VARCHAR(255) NOT NULL,
+    CONSTRAINT admin_pkey PRIMARY KEY (admin_id)
+);
+
+-- usersテーブル作成クエリ
+CREATE TABLE IF NOT EXISTS public.users
+(
+    user_id bigint NOT NULL,
+    user_name VARCHAR(255) NOT NULL,
+    user_email VARCHAR(255) NOT NULL,
+    user_password VARCHAR(255) NOT NULL,
+    user_telephone VARCHAR(12) NOT NULL,
+    CONSTRAINT user_pkey PRIMARY KEY (user_id)
+);
+-- courseテーブル作成クエリ
+CREATE TABLE IF NOT EXISTS public.course
+(
+    course_id bigint NOT NULL,
+    start_date date,
+    start_time time without time zone,
+    finish_time time without time zone,
+    course_name VARCHAR(255) NOT NULL,
+    course_detail VARCHAR(255) NOT NULL,
+    course_fee VARCHAR(255) NOT NULL,
+    course_image VARCHAR(255) NOT NULL,
+    register_date timestamp without time zone,
+    admin_id bigint,
+    CONSTRAINT course_pkey PRIMARY KEY (course_id),
+    CONSTRAINT course_admin_fk FOREIGN KEY (admin_id) REFERENCES public.admin (admin_id)
+);
+
+-- transaction_historyテーブル作成クエリ
+CREATE TABLE IF NOT EXISTS public.transaction_history
+(
+    transaction_id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    amount INT NOT NULL,
+    transaction_date timestamp without time zone,
+    CONSTRAINT transaction_history_pkey PRIMARY KEY (transaction_id),
+    CONSTRAINT transaction_user_fk FOREIGN KEY (user_id) REFERENCES public.users (user_id)
+);
+-- transaction_itemテーブル作成クエリ
+CREATE TABLE IF NOT EXISTS public.transaction_item
+(
+    item_id bigint NOT NULL,
+    course_id bigint NOT NULL,
+    transaction_id bigint NOT NULL,
+    CONSTRAINT transaction_item_pkey PRIMARY KEY (item_id),
+    CONSTRAINT transaction_item_course_fk FOREIGN KEY (course_id) REFERENCES public.course (course_id),
+    CONSTRAINT transaction_item_transaction_fk FOREIGN KEY (transaction_id) REFERENCES public.transaction_history (transaction_id)
+);
+
+-- favouriteテーブル作成クエリ
+CREATE TABLE IF NOT EXISTS public.favourite
+(
+    favourite_id bigint NOT NULL,
+    course_id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    CONSTRAINT favourite_pkey PRIMARY KEY (favourite_id),
+    CONSTRAINT favourite_course_fk FOREIGN KEY (course_id) REFERENCES public.course (course_id),
+    CONSTRAINT favourite_user_fk FOREIGN KEY (user_id) REFERENCES public.users (user_id)
+);
