@@ -20,3 +20,7 @@ AdminEntity AdminDao AdminService作成
 2024/6/5 14:13
 アウントン
 upload からだったのでやり直し
+
+2024/6/5 16:30
+チョウキ
+UserEntity、UserDao、UserService作成。
