@@ -11,3 +11,8 @@ DB と接続するname 属性 の値変更
 アウントン
 ecSite project アップロード
 DB テーブル作成クエリファイルアップロード
+
+2024/6/5  13:27
+アウントン
+ecSite project アップロード
+AdminEntity AdminDao AdminService作成
