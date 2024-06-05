@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh;  
+    margin: 0; 
+    background-color: #FFE1C6;
+}
+
+.container {
+    max-width: 500px;
+    padding: 0 20px;
+}
+
+.wrapper {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.title {
+    line-height: 80px;
+    border-radius: 5px 5px 0 0;
+    background-color: #94BFFF;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+
+form {
+    padding: 30px 50px 25px 50px;
+}
+
+form .row {
+   height: 45px; 
+   background-color: #fff;
+   margin-bottom: 15px;
+   position: relative;
+}
+
+.row input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.row input[type="text"]:focus,
+.row input[type="password"]:focus {
+    border-color: #94BFFF;
+    box-shadow: inset 0px 0px 2px 2px rgba(26, 188, 156, 0.25);
+}
+
+.row i {
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+    background-color: #94BFFF;
+    border: 1px solid #94BFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.remember input {
+    margin-right: 10px;
+    width: auto;
+    
+}
+
+.button input {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 0px;
+    background-color: #94BFFF;
+    border: 1px solid #94BFFF;
+    cursor: pointer;
+}
+
+.button input:hover {
+    background-color: #2266cb;
+}
+
+.move {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.move a {
+    color: #2266cb;
+    text-decoration: none;
+}
+
+.move a:hover {
+    text-decoration: underline;
+}
+.copyright{
+    margin-left: 30px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* admin_register_confirmのcssはここに追加 */
+.confirm {
+    margin-bottom: 20px;
+}
+
+.confirm p{
+    font-size: 18px;
+}
+
+form .button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-button, .return {
+    width: 45%;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.confirm-button {
+    background-color: #94BFFF;
+    color: #fff;
+}
+
+.confirm-btn:hover {
+    background-color: #2266cb;
+}
+
+.return {
+    background-color: #B4E9B9;
+    color: #fff;
+}
+
+.return:hover {
+    background-color: #82d3a1;
+}
+
+
+

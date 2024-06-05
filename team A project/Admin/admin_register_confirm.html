@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin_register_confirm</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
-    <header>
-        <h1>登録内容を確認</h1>
-    </header>
     <main>
-        <div>
-            <ul style="list-style: none;">
-                <li>名前</li>
-                <li>メールアドレス</li>
-                <li></li>
-            </ul>
-        </div>
-        <div>
-            <button>登録</button>
-            <button>戻る</button>
+        <div class="container">
+            <div class="wrapper">
+                <div class="title">登録内容確認</div>
+                <form action="admin_login.html" method="#">
+                    <div class="confirm">
+                        <p>管理者名 : Admin Name</p>
+                    </div>
+                    <div class="confirm">
+                        <p>メールアドレス : Admin Email</p>
+                    </div>
+                    <div class="button-gourp">
+                        <button class="confirm-button" onclick="confirmRegister()">登録する</button>
+                        <button class="return">戻る</button>
+                    </div>
+                </form>
+            </div>
+            <div class="copyright">
+                <small>copyright&copy;EC-site@2024 Team A - All right reserved</small>
+            </div>
         </div>
     </main>
-    <footer>
-        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
-    </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script>
+        function confirmRegister() {
+            alert('登録完了しました。')
+        }
+
+    </script>
 </body>
 </html>

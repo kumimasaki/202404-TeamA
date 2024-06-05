@@ -1,0 +1,17 @@
+
+
+2024/6/5　17：30
+きょううひさん
+
+course_list、
+course_delete_finish、
+course_edit_finishと
+course_register_finishの画面のcss完成しました。
+
+
+product_listの画面のcssまだ作っています。
+
+2024/6/5　17：52
+ゴサイフォン
+
+admin_login,admin_register,admin_register_confirmとheaderとfooter完成しました

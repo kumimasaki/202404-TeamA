@@ -5,40 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin_register</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 
 <body>
-    <header>
-        <h1>管理者登録</h1>
-    </header>
     <main>
-        <section>
-            <form action="#" method="post">
-                <div>
-                    <label for="name">名前</label>
-                    <input type="text" name="adminName" id="name" placeholder="名前を記入">
-                </div>
-                <div>
-                    <label for="email">メールアドレス</label>
-                    <input type="text" name="adminEmail" id="email" placeholder="メールアドレスを記入">
-                </div>
-                <div>
-                    <label for="password">パスワード</label>
-                    <input type="text" name="adminPassword" id="password" placeholder="パスワード">
-                </div>
-                <div>
-                    <button type="button">新規登録</button>
-                </div>
-                <div>
-                    <a href="#">アカウント再登録はこちら</a>
-                </div>
-            </form>
-        </section>
+        <div class="container">
+            <div class="wrapper">
+                <div class="title">管理者登録</div>
+                <form action="admin_register_confirm.html" method="#">
+                    <div class="row">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="adminName" id="username" placeholder="管理者名" required>
+                    </div>
+                    <div class="row">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="text" name="adminEmail" id="email" placeholder="メールアドレス" required>
+                    </div>
+                    <!-- <p class="error-message" th:if="${error}">メールアドレスは既に登録しました</p> -->
+                    <div class="row">
+                        <i class="fas fa-lock"></i>
+                        <input type="text" name="adminPassword" id="password" placeholder="パスワード" required>
+                    </div>
+                    <div class="row button">
+                        <input type="submit" value="新規登録">
+                    </div>
+                    <div class="move">登録済方は<a href="admin_login.html">こちら</a></div>
+                </form>
+            </div>
+            <div class="copyright">
+                <small>copyright&copy;EC-site@2024 Team A - All right reserved</small>
+            </div>
+        </div>
     </main>
-    <footer>
-        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
-    </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
