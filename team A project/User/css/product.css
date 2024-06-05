@@ -1,0 +1,22 @@
+
+
+main  {
+  display: flex;
+   /* 子要素を縦方向に並べる */
+   flex-direction: column;
+  /* 子要素を縦方向に中央に配置する */
+  justify-content: center;
+  /* 子要素を横方向に中央に配置する設定です。 */
+  align-items: center;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+

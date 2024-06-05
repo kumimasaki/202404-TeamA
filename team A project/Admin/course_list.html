@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>course_list</title>
-    <link rel="stylesheet" href=" ">
+    <link rel="stylesheet" href="/Admin/css/course.css ">
 </head>
+
 <body>
     <header>
-        <ul class="header-list" style="list-style: none;">
-            <li>管理者名</li>
-            <li>講座一覧</li>
-            <li>ログアウト</li>
-        </ul>
+        <nav class="navbar">
+            <ul class="header-list" style="list-style: none;">
+                <li>
+                <span class="username">当前登录用户：username</span>
+            </li>
+                <div class="other-contents">
+                    <li>講座一覧</li>
+                    <li>
+                        <a href="#" class="logout">ログアウト</a>
+                    </li>
+                </div>
+            </ul>
+
+        </nav>
     </header>
     <main>
         <section>
             <div>
                 <h2>講座一覧</h2>
             </div>
-            <div>
+            <div class="add">
                 <a href="">追加</a>
             </div>
-            <div>
+            <div class="contents">
                 <table border="1">
                     <tr onclick="">
-                        <th >講座名</th>
-                        <th >値段</th>   
+                        <th>講座名</th>
+                        <th>値段</th>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>JAVA初心者コース</td>
@@ -36,7 +48,7 @@
                     <tr>
                         <td>JAVA中級者コース</td>
                         <td>16000</td>
-                        <td><a  href="" class="">編集</a></td>
+                        <td><a href="" class="">編集</a></td>
                     </tr>
                     <tr>
                         <td>JAVA上級者コース</td>
@@ -56,4 +68,5 @@
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
     </footer>
 </body>
+
 </html>

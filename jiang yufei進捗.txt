@@ -1,0 +1,11 @@
+
+
+2024/6/5　17：30
+
+course_list、
+course_delete_finish、
+course_edit_finishと
+course_register_finishの画面のcss完成しました。
+
+
+product_listの画面のcssまだ作っています。
