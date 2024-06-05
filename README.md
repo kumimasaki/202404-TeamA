@@ -16,3 +16,7 @@ DB テーブル作成クエリファイルアップロード
 アウントン
 ecSite project アップロード
 AdminEntity AdminDao AdminService作成
+
+2024/6/5 14:13
+アウントン
+upload からだったのでやり直し
