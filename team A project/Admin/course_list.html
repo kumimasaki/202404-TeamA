@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>course_list</title>
-    <link rel="stylesheet" href="/Admin/css/course.css ">
+    <link rel="stylesheet" href="css/course.css">
 </head>
-
 <body>
     <header>
-        <nav class="navbar">
-            <ul class="header-list" style="list-style: none;">
-                <li>
-                <span class="username">当前登录用户：username</span>
-            </li>
-                <div class="other-contents">
-                    <li>講座一覧</li>
-                    <li>
-                        <a href="#" class="logout">ログアウト</a>
-                    </li>
-                </div>
-            </ul>
-
-        </nav>
+        <ul class="header-list">
+            <li class="left-item"><a href="#">管理者名 ようこそ！</a></li>
+            <div class="right-items">
+                <li><a href="course_list.html">講座一覧</a></li>
+                <li><a href="admin_login.html">ログアウト</a></li>
+            </div>
+        </ul>
     </header>
     <main>
         <section>
-            <div>
-                <h2>講座一覧</h2>
+            <div class="title">
+                <p>講座一覧</p>
             </div>
             <div class="add">
-                <a href="">追加</a>
+                <button>追加</button>
             </div>
             <div class="contents">
-                <table border="1">
+                <table border="2">
                     <tr onclick="">
                         <th>講座名</th>
                         <th>値段</th>
@@ -43,22 +34,22 @@
                     <tr>
                         <td>JAVA初心者コース</td>
                         <td>12000</td>
-                        <td><a href="" class="">編集</a></td>
+                        <td><button>編集</button></td>
                     </tr>
                     <tr>
                         <td>JAVA中級者コース</td>
                         <td>16000</td>
-                        <td><a href="" class="">編集</a></td>
+                        <td><button>編集</button></td>
                     </tr>
                     <tr>
                         <td>JAVA上級者コース</td>
                         <td>20000</td>
-                        <td><a href="" class="">編集</a></td>
+                        <td><button>編集</button></td>
                     </tr>
                     <tr>
                         <td>PHP初心者コース</td>
                         <td>12000</td>
-                        <td><a href="" class="">編集</a></td>
+                        <td><button>編集</button></td>
                     </tr>
                 </table>
             </div>
@@ -68,5 +59,4 @@
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
     </footer>
 </body>
-
 </html>

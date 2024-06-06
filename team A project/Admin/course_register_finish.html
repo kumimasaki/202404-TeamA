@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>course_register_confirm</title>
-    <link rel="stylesheet" href="/Admin/css/course.css">
+    <link rel="stylesheet" href="css/course.css">
 </head>
 
 <body>
     <header>
-        <ul class="header-list" style="list-style: none;">
-            <li>管理者名</li>
-            <li>講座一覧</li>
-            <li>ログアウト</li>
+        <ul class="header-list">
+            <li class="left-item"><a href="#">管理者名 ようこそ！</a></li>
+            <div class="right-items">
+                <li><a href="course_list.html">講座一覧</a></li>
+                <li><a href="admin_login.html">ログアウト</a></li>
+            </div>
         </ul>
     </header>
     <main>
@@ -22,7 +24,7 @@
                 <p>講座の登録が完了しました。</p>
             </div>
             <div class="add-more">
-                <a href="course_register.html">もう一度追加</a>
+                <a href="course_register.html"><button>もう一度追加</button></a>
             </div>
         </div>
     </main>

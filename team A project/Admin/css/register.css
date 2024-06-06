@@ -157,7 +157,7 @@ form .button-group {
     color: #fff;
 }
 
-.confirm-btn:hover {
+.confirm-button:hover {
     background-color: #2266cb;
 }
 
@@ -167,7 +167,7 @@ form .button-group {
 }
 
 .return:hover {
-    background-color: #82d3a1;
+    background-color: #278f4f;
 }
 
 
