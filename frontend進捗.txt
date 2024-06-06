@@ -15,3 +15,11 @@ product_listの画面のcssまだ作っています。
 ゴサイフォン
 
 admin_login,admin_register,admin_register_confirmとheaderとfooter完成しました
+
+
+2024/6/6
+
+17:29
+きょううひ
+
+product_detail,product_listのCSSを完成しました。

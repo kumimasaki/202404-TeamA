@@ -2,21 +2,158 @@
 
 main  {
   display: flex;
-   /* 子要素を縦方向に並べる */
+   /* 子要素を縦方向（上から下）に並べる */
    flex-direction: column;
-  /* 子要素を縦方向に中央に配置する */
+  /* 子要素を(縦方向)に中央に配置する */
   justify-content: center;
-  /* 子要素を横方向に中央に配置する設定です。 */
+  /* 子要素を横方向に中央に配置する設定。 */
   align-items: center;
-  padding: 20px;
+  padding: 15px;
+
 }
 
+.course-detail-img {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.course-detail-img img {
+  width: 100%;
+  height: auto;
+  max-height: 400px; 
+  object-fit: contain; /* 元のアスペクト比（縦横比）を維持され */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+textarea{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  /* 高さだけ調整可能*/
+  resize: vertical;
+  outline: none;
+}
+
+
+
+.product-detail-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+/* すべてのボタン */
 button {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   border-radius: 5px;
+  /* マウス様子 */
   cursor: pointer;
+  /* 効果 */
   transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #4CAF50;
+  color: white;
+  margin: 7px;
 }
 
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #45a049;
+}
+
+
+
+.add-cart-btn {
+  margin-right: 70px;
+  margin-left: 10px;
+}
+
+
+.back-btn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.back-btn:hover {
+  background-color: #c0c0c0;
+}
+
+.list-to-detail-btn{
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.list-to-detail-btn:hover {
+  background-color: #c0c0c0;
+}
+
+.course-list-container{
+  display: flex;
+  justify-content: center;
+  /* 水平方向に展開 */
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.course-item{
+  display: flex;
+  /* 子要素を縦方向（上から下）に並べる */
+  flex-direction: column;
+  /* 横方向に中央に配置する設定 */
+  align-items: center;
+  width: 32%;
+  margin: 1%;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.list-course-img {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cart-item-img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+
+.cart-course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-course-info p {
+  margin: 5px 0;
+}
+
+.cart-list-delete-list{
+ /* 終端に揃えます*/
+  align-self: flex-end;
+}
