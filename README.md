@@ -23,8 +23,12 @@ upload からだったのでやり直し
 
 2024/6/5 16:30
 チョウキ
-UserEntity、UserDao、UserService作成。
+UserEntity、UserDao、UserService作成
 
 2024/6/5 17:47
 キョウウヒ
 course_list,course_edit_finish,course_register_finish,course_delete_finishのcssファイル作成
+
+2024/6/6 17:47
+チョウキ
+UserRegisterControllerの作成
