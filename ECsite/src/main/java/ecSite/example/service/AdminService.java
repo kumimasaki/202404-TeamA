@@ -30,4 +30,18 @@ public class AdminService {
 			return false;
 		}
 	}
+	//usercheck処理（処理）
+		public boolean userCheck( String adminEmail) {
+			/*
+			 * もし、findByAdminEmail == null だったら、登録処理をします 
+			 *  save メソッドを使用して登録処理をします //
+			 * 保存できたらtrue
+			 * そうでない場合は、保存処理結果false
+			 */	
+			if( adminDao.findByAdminEmail(adminEmail) == null) {
+				return true;
+			}else {
+				return false;
+			}
+		}
 }

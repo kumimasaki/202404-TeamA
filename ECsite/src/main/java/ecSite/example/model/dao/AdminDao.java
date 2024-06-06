@@ -15,6 +15,8 @@ public interface AdminDao extends JpaRepository<AdminEntity, Long> {
 	//adminService から渡されるadmin情報(メールアドレス)を条件にdb検索
 	AdminEntity findByAdminEmail(String adminEmail);
 	
+	AdminEntity findByAdminName(String adminName);
+	
 	//adminService から渡されるadmin情報を基にdbへ保存する
 	//dbになかったらinsert
 	//DBにあったらupdate
