@@ -10,28 +10,43 @@ import ecSite.example.model.entity.UsersEntity;
 public class UsersService {
 	@Autowired
 	private UsersDao usersDao;
+	
+	private UsersEntity notConfirmedUser;
 
-	// 保存処理（登録処理）
-	public boolean createUser(
+	// ユーザー登録処理
+	public boolean createNotConfirmedUser(
 			String userName,
 			String userEmail,
 			String userPassword,
 			String userTelephone) {
-		// もし、findByUserEmail==nullだったら登録処理処理します
-		// saveメソッドを使用して登録処理をする
-		// 保存ができたらtrue
-		// そうでない場合、保存処理失敗 false
+		// もし、findByUserEmail==nullだったら
+		// NotConfirmedUserに情報を渡して、trueを渡す
+		// そうでない場合、ユーザー登録処理失敗 false
 		if(usersDao.findByUserEmail(userEmail)==null) {
-			usersDao.save(new UsersEntity(
+			notConfirmedUser = new UsersEntity(
 					userName,
 					userEmail,
 					userPassword,
-					userTelephone));
+					userTelephone);
 			return true;
 		} else {
 			return false;
 		}
 	}
+	
+	// 登録欲しいユーザー情報を取得
+	public UsersEntity getNotConfirmedUser() {
+		return notConfirmedUser;
+	}
+	
+	// 保存処理と更新処理
+	public void createConfirmedUser() {
+		if (notConfirmedUser != null) {
+			usersDao.save(notConfirmedUser);
+			notConfirmedUser = null;
+		}
+	}
+	
 	
 	// ログイン処理
 	public UsersEntity loginCheck(String userEmail, String userPassword) {
