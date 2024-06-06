@@ -20,3 +20,8 @@ admin_login,admin_register,admin_register_confirmとheaderとfooter完成しま�
 ゴサイフォン
 
 course_edit,course_registerのcssを完成しました
+
+2024/6/6 17:50
+きょううひ
+
+product_list,product_detailのCSS完成しました。
