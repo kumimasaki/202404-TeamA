@@ -32,3 +32,7 @@ course_list,course_edit_finish,course_register_finish,course_delete_finishのcss
 2024/6/6 18:00
 チョウキ
 UserRegisterControllerの作成
+
+2024/6/7
+キョウウヒ
+css 修正と追加
