@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +7,35 @@
     font-family: 'Poppins',sans-serif;
 }
 
-body {
+header {
+    display: flex;
+    align-items: center;
+    background-color: #BEC23F; 
+    padding: 10px;
+}
+header img {
+    width: 100px; 
+    height:100px; 
+    margin-right: 10px; 
+}
+header p {
+    margin: 0;
+    font-size: 24px;
+    color: white; 
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body { 
+    margin: 0; 
+    background-color: #FFE1C6;
+}
+
+main {
     display: flex;
     justify-content: center; 
     align-items: center;
-    min-height: 100vh;  
-    margin: 0; 
-    background-color: #FFE1C6;
+    min-height:80vh; 
 }
 
 .container {
@@ -29,7 +52,7 @@ body {
 .title {
     line-height: 80px;
     border-radius: 5px 5px 0 0;
-    background-color: #94BFFF;
+    background-color: #BEC23F;
     font-size: 25px;
     font-weight: 600;
     color: #fff;
@@ -61,8 +84,8 @@ form .row {
 
 .row input[type="text"]:focus,
 .row input[type="password"]:focus {
-    border-color: #94BFFF;
-    box-shadow: inset 0px 0px 2px 2px rgba(26, 188, 156, 0.25);
+    border-color: #BEC23F;
+    box-shadow: inset 0px 0px 2px 2px rgba(140, 171, 31, 0.25);
 }
 
 .row i {
@@ -71,8 +94,8 @@ form .row {
     height: 100%;
     color: #fff;
     font-size: 18px;
-    background-color: #94BFFF;
-    border: 1px solid #94BFFF;
+    background-color: #BEC23F;
+    border: 1px solid #BEC23F;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,23 +108,23 @@ form .row {
     font-size: 20px;
     font-weight: 600;
     padding-left: 0px;
-    background-color: #94BFFF;
-    border: 1px solid #94BFFF;
+    background-color: #BEC23F;
+    border: 1px solid #BEC23F;
     cursor: pointer;
 }
 
 .button input:hover {
-    background-color: #2266cb;
+    background-color: #dadf59;
 }
 
 .move {
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
     font-size: 17px;
 }
 
 .move a {
-    color: #2266cb;
+    color: #1957db;
     text-decoration: none;
 }
 
@@ -118,7 +141,7 @@ form .row {
     margin-bottom: 10px;
 }
 
-/* admin_register_confirmのcssはここに追加 */
+/* user_register_confirmのcssはここに追加 */
 .confirm {
     margin-bottom: 20px;
 }
@@ -142,22 +165,19 @@ form .button-group {
 }
 
 .confirm-button {
-    background-color: #94BFFF;
+    background-color: #BEC23F;
     color: #fff;
 }
 
 .confirm-button:hover {
-    background-color: #2266cb;
+    background-color: #dadf59;
 }
 
 .return {
-    background-color: #B4E9B9;
+    background-color: #b8b6b3;
     color: #fff;
 }
 
 .return:hover {
-    background-color: #278f4f;
+    background-color: #8b7f64;
 }
-
-
-

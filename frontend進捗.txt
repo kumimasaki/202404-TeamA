@@ -25,3 +25,8 @@ course_edit,course_registerのcssを完成しました
 きょううひ
 
 product_list,product_detailのCSS完成しました。
+
+2024/06/07 17:41
+ゴサイフォン
+
+userloginとregisterに関するcss完成。navバーとfooterもうok!

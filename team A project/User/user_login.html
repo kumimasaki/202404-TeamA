@@ -4,37 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user_login</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
+
 <body>
     <header>
-        <h1>ログイン</h1>
+            <a href="user_login.html"><img src="img/IT_logo.png" alt=""></a>
+            <p class="site-name">ITコース販売サイト</p>
     </header>
     <main>
-        <section>
-            <form action="#" method="post">
-                <div>
-                    <label for="email">メールアドレス</label>
-                    <input type="text" name="userEmail" id="email" placeholder="メールアドレスを記入">
-                </div>
-                <div>
-                    <label for="password">パスワード</label>
-                    <input type="text" name="userPassword" id="password" aria-placeholder="パスワードを記入">
-                </div>
-                <div>
-                    <label for="telephone">パスワード</label>
-                    <input type="text" name="userTelephone" id="telephone" aria-placeholder="電話番号を記入">
-                </div>
-                <div>
-                    <button type="button">ログイン</button>
-                </div>
-                <div>
-                    <a href="#">新規登録はこちら</a>
-                </div>
-            </form>
-        </section>
+        <div class="container">
+            <div class="wrapper">
+                <div class="title">ログイン</div>
+                <form action="#" method="post">
+                    <div class="row">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="text" name="userEmail" id="email" placeholder="メールアドレス" required>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="userPassword" id="password" placeholder="パスワード" required>
+                    </div>
+                     <!-- <p class="error-message" th:if="${error}">メール又はパスワードが間違っている</p>  -->
+                    <div class="row remember">
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember">メールアドレスを保持する</label>
+                    </div>
+                    <div class="row button">
+                        <input type="submit" value="ログイン">
+                    </div>
+                    <div class="password"><a href="password_reset_form.html">パスワード忘れた？</a></div>
+                    <div class="move">新規登録は<a href="user_register.html">こちら</a></div>
+                </form>
+            </div>
+            <div class="copyright">
+                <small>copyright&copy;EC-site@2024 Team A - All right reserved</small>
+            </div>
+        </div>
     </main>
-    <footer>
-        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
-    </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>   
 </body>
 </html>
