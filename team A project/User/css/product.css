@@ -57,7 +57,7 @@ textarea{
 /* すべてのボタン */
 button {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   /* マウス様子 */
@@ -73,6 +73,16 @@ button:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #45a049;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container button {
+  margin: auto 10%;
+  font-size: 18px;
 }
 
 h2{
@@ -183,8 +193,6 @@ hr {
   align-self: flex-end;
 }
 
-
-
 .cart-list-btn-container button{
   font-size: 18px;
   margin: 15px 70px;
@@ -208,8 +216,8 @@ hr {
 
 .pay-selection {
   margin: 10% auto 5%;
- background-color: aquamarine;
- padding: 80px;
+  background-color: aquamarine;
+  padding: 80px;
   display: flex;
   font-size: 30px;
   align-items: center;
@@ -237,15 +245,6 @@ hr {
   margin-right: 10px;
 }
 
-.payment-selection-btn-container {
-  display: flex;
-  justify-content: center;
-}
-
-.payment-selection-btn-container button {
-  margin: auto 10%;
-  font-size: 18px;
-}
 
 /* payment-confirm page */
 .confirm-contents-container{
@@ -266,12 +265,11 @@ li {
  display: inline-block;
  background-color: aquamarine;
  padding: 20px;
- margin-left: 20%;
+ margin: auto 35% 2% 20%;
  font-size: 18px;
 }
 
 .confirm-total-money{
   display: inline-block;
-  
-  margin-right: 5%;
 }
+
