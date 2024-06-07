@@ -2,6 +2,7 @@ package ecSite.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +22,8 @@ public class UsersLoginController {
 	
 	// ユーザーログイン画面の表示
 	@GetMapping("/user/login")
-	public String getUsersLoginPage() {
+	public String getUsersLoginPage(Model model) {
+		model.addAttribute("error", false);
 		return "user_login.html";
 	}
 	
@@ -29,7 +31,8 @@ public class UsersLoginController {
 	@PostMapping("/user/login/process")
 	public String usersLoginProcess(
 			@RequestParam String userEmail,
-			@RequestParam String userPassword) {
+			@RequestParam String userPassword,
+			Model model) {
 		// loginChechメソッドを呼び出してその結果をusersEntityという変数に格納
 		UsersEntity usersEntity = usersService.loginCheck(userEmail, userPassword);
 		// もし、usersEntity==nullログイン画面にとどまります
@@ -37,6 +40,7 @@ public class UsersLoginController {
 		// 商品一覧画面にリダイレクトする
 		
 		if(usersEntity == null) {
+			model.addAttribute("error", true);
 			return "user_login.html";
 		} else {
 			session.setAttribute("loginUserInfo", usersEntity);

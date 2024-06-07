@@ -47,7 +47,6 @@ public class UsersService {
 		}
 	}
 	
-	
 	// ログイン処理
 	public UsersEntity loginCheck(String userEmail, String userPassword) {
 		UsersEntity usersEntity = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
@@ -60,4 +59,25 @@ public class UsersService {
 			return usersEntity;
 		}
 	}
+	
+	// パスワードリセット確認処理
+	public boolean resetCheck(String userEmail, String userPassword) {
+		UsersEntity usersEntity = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
+		//もし、emailとpasswordがfindByUserEmailAndUserPasswordを使用して存在しなかった場合==nullの場合、
+		//その場合、存在しないnullであることをコントローラークラスに知らせる
+		//そうでない場合、NotConfirmedUserにユーザーの情報を渡して、trueをコントローラークラスに渡す
+		if (usersEntity == null) {
+			return false;
+		} else {
+			notConfirmedUser = usersEntity;
+			return true;
+		}
+	}
+	
+	// パスワードリセット処理
+    public void resetUserPassword(String newUserPassword) {
+    	notConfirmedUser.setUserPassword(newUserPassword);
+    	usersDao.save(notConfirmedUser);
+		notConfirmedUser = null;
+    }
 }

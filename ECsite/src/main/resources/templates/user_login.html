@@ -11,24 +11,21 @@
     </header>
     <main>
         <section>
-            <form action="#" method="post">
+            <form th:action="@{/user/login/process}" method="post">
                 <div>
-                    <label for="email">メールアドレス</label>
+                    <label for="userEmail">メールアドレス</label>
                     <input type="text" name="userEmail" id="email" placeholder="メールアドレスを記入">
                 </div>
                 <div>
-                    <label for="password">パスワード</label>
+                    <label for="userPassword">パスワード</label>
                     <input type="text" name="userPassword" id="password" aria-placeholder="パスワードを記入">
                 </div>
+				<p class="error-message" th:if="${error}">メール又はパスワードが間違っている</p>
                 <div>
-                    <label for="telephone">パスワード</label>
-                    <input type="text" name="userTelephone" id="telephone" aria-placeholder="電話番号を記入">
+                    <button type="submit">ログイン</button>
                 </div>
                 <div>
-                    <button type="button">ログイン</button>
-                </div>
-                <div>
-                    <a href="#">新規登録はこちら</a>
+                    <a th:href="@{/user/register}">新規登録はこちら</a>
                 </div>
             </form>
         </section>
