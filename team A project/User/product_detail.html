@@ -5,24 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product_detail</title>
-    <link rel="stylesheet" href="/User/css/product.css">
+    <link rel="stylesheet" href="css/new_product.css">
 </head>
 
 <body>
     <header>
-        <nav>
-            <li>サイトアイコン</li>
-            <li>ユーザー名</li>
-            <li>マイページ</li>
-            <li>講座一覧</li>
-            <li>カート</li>
+        <nav class="nav-list">
+            <div class="left-items">
+                <li><img src="img/IT_logo.png" alt=""></li>
+                <li><p class="site-name">ITコース販売サイト</p></li>
+            </div>
+            <div class="right-items">
+                <li>ユーザー名</li>
+                <li><i class="fa-solid fa-shop"></i>講座一覧</li>
+                <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
+                <li class="user-menu">
+                    <i class="fa-solid fa-user-tie"></i>マイページ
+                    <ul class="dropdown">
+                        <li><i class="fa-solid fa-right-from-bracket"></i>ログアウト</li>
+                    </ul>
+                </li>
+            </div>
         </nav>
     </header>
     <main>
         <h2> 講座の詳細一覧</h2>
         <form action="#" method="post" enctype="multipart/form-data">
             <div class="course-detail-img">
-                <img src="img/beef.jpg" alt="">
+                <img src="img/me.png" alt="">
             </div>
             <div>
                 <p>開催日 : 2024/07/28</p>
@@ -49,6 +59,8 @@
     <footer>
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
     </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
 </body>
 
 </html>
