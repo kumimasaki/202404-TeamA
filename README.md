@@ -36,3 +36,7 @@ UserRegisterControllerの作成
 2024/6/7　15:42
 キョウウヒ
 css 修正と追加
+
+2024/6/7　17：31
+キョウウヒ
+pay_selection,car_list,payment_confirmのcssファイル作成
