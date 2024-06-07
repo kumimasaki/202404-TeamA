@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
 main  {
@@ -70,7 +75,13 @@ button:hover {
   background-color: #45a049;
 }
 
+h2{
+  margin-bottom: 10px;
+}
 
+img{
+  margin: 15px;
+}
 
 .add-cart-btn {
   margin-right: 70px;
@@ -111,7 +122,7 @@ button:hover {
   flex-direction: column;
   /* 横方向に中央に配置する設定 */
   align-items: center;
-  width: 32%;
+  width: 45%;
   margin: 1%;
   padding: 20px;
   border-radius: 8px;
@@ -140,6 +151,7 @@ button:hover {
   object-fit: cover;
   border-radius: 5px;
   margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -153,7 +165,113 @@ button:hover {
   margin: 5px 0;
 }
 
-.cart-list-delete-list{
+.cart-list-delete-btn{
  /* 終端に揃えます*/
   align-self: flex-end;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.total-money {
+   /* 終端に揃えます*/
+  align-self: flex-end;
+}
+
+
+
+.cart-list-btn-container button{
+  font-size: 18px;
+  margin: 15px 70px;
+}
+
+/* payment-selection page */
+
+.pay-process{
+ text-align: center;
+  margin-top: 60px;
+  font-size: 25px;
+}
+
+.mark{
+  color: #3FBD4C;
+}
+
+.other-process{
+  color: #c0c0c0;
+}
+
+.pay-selection {
+  margin: 10% auto 5%;
+ background-color: aquamarine;
+ padding: 80px;
+  display: flex;
+  font-size: 30px;
+  align-items: center;
+  
+}
+
+.pay-selection p {
+  margin-right: 20px;
+}
+
+.selection-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  margin: 20px;
+  display: flex;
+  /* 子要素を横方向に中央に配置する設定。 */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option input {
+  margin-right: 10px;
+}
+
+.payment-selection-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.payment-selection-btn-container button {
+  margin: auto 10%;
+  font-size: 18px;
+}
+
+/* payment-confirm page */
+.confirm-contents-container{
+  display: flex;
+  justify-content: center;
+}
+
+ul{
+  /* デフォルトの箇条書きの点を削除する */
+  list-style-type: none; 
+}
+
+li {
+  margin: 15px 0; 
+}
+
+.payment-confirm-selection{
+ display: inline-block;
+ background-color: aquamarine;
+ padding: 20px;
+ margin-left: 20%;
+ font-size: 18px;
+}
+
+.confirm-total-money{
+  display: inline-block;
+  
+  margin-right: 5%;
 }

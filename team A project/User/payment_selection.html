@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>pay-selection</title>
+    <link rel="stylesheet" href="css/product.css">
 </head>
+
 <body>
-    <div>
+    <main>
         <div>
-            <span>お支払い方法選択</span>
-            <span>&#x25B6;</span>
-            <span>申し込む内容確認</span>
-            <span>&#x25B6;</span>
-            <span>申し込み完了</span>
+            <div class="pay-process">
+                <span class="now-process">お支払い方法選択</span>
+                <span class="mark">&#x25B6;</span>
+                <span class="other-process">申し込む内容確認</span>
+                <span class="mark">&#x25B6;</span>
+                <span class="other-process">申し込み完了</span>
+            </div>
+
+            <div class="pay-selection">
+                <p>お支払い方法の選択:</p>
+                <div class="selection-options">
+                    <div class="option">
+                        <input type="radio" id="bank_transfer" name="payment" value="bank_transfer">
+                        <label for="bank_transfer">銀行振込</label><br>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="credit_card" name="payment" value="credit_card">
+                        <label for="credit_card">クレジットカード</label><br>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="paypay_online" name="payment" value="paypay_online">
+                        <label for="paypay_online">PayPayオンライン</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-selection-btn-container">
+                <button>確定</button>
+                <button class="back-btn">戻る</button>
+            </div>
         </div>
-    
-        <div>
-            <p>お支払い方法の選択:</p>
-            <input type="radio" id="bank_transfer" name="payment" value="bank_transfer">
-            <label for="bank_transfer">銀行振込</label><br>
-            <input type="radio" id="credit_card" name="payment" value="credit_card">
-            <label for="credit_card">クレジットカード</label><br>
-            <input type="radio" id="paypay_online" name="payment" value="paypay_online">
-            <label for="paypay_online">PayPayオンライン</label>
-        </div>
-    
-        <div>
-            <button>確定</button>
-            <button>戻る</button>
-        </div>
-    </div>
+    </main>
 </body>
+
 </html>
