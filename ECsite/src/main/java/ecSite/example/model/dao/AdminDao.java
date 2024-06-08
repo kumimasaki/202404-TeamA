@@ -19,7 +19,10 @@ public interface AdminDao extends JpaRepository<AdminEntity, Long> {
 	//dbになかったらinsert
 	//DBにあったらupdate
 	AdminEntity save(AdminEntity adminEntity);
-	
-	//admin情報一覧を取得
+
+	//admin情報一覧を取得S
 	List<AdminEntity> findAll();
+
+	AdminEntity findByAdminEmailAndAdminPassword(String adminEmail, String adminPassword);
+
 }
