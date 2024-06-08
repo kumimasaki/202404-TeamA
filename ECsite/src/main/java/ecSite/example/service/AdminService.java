@@ -31,7 +31,7 @@ public class AdminService {
 		 * 保存できたらtrue
 		 * そうでない場合は、保存処理結果false
 		 */	
-		if( adminDao.findByAdminEmail(adminEmail) == null) {
+		if( adminDao.findByAdminEmail(adminEmail) == null ) {
 			adminDao.save(new AdminEntity(adminName, adminEmail, adminPassword ));
 			return true;
 		}else {
@@ -50,6 +50,19 @@ public class AdminService {
 				return true;
 			}else {
 				return false;
+			}
+		}
+		
+		//ログイン処理
+		//もし、emailとpassword がfindByUserEmailAndPasswordを使用して存在しない場合==nullの場合
+		//その場合は、存在しないnullであることをコントローラークラスに知らせる
+		//そうでない場合ログインしている人に情報をコントローラークラスに返す
+		public AdminEntity loginCheck(String adminEmail, String adminPassword) {
+			AdminEntity adminEntity = adminDao.findByAdminEmailAndAdminPassword(adminEmail, adminPassword);
+			if(adminEntity == null) {
+				return null;
+			}else {
+				return adminEntity;
 			}
 		}
 }
