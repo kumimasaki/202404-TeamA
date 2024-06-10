@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pay-selection</title>
-    <link rel="stylesheet" href="css/product.css">
+    <title>payment_selection</title>
+    <link rel="stylesheet" href="css/payment.css">
 </head>
-
 <body>
+    <header>
+        <nav class="nav-list">
+            <div class="left-items">
+                <li><img src="img/IT_logo.png" alt=""></li>
+                <li><p class="site-name">ITコース販売サイト</p></li>
+            </div>
+            <div class="right-items">
+                <li>ユーザー名</li>
+                <li><i class="fa-solid fa-shop"></i>講座一覧</li>
+                <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
+                <li class="user-menu">
+                    <i class="fa-solid fa-user-tie"></i>マイページ
+                    <ul class="dropdown">
+                        <li><i class="fa-solid fa-right-from-bracket"></i>ログアウト</li>
+                    </ul>
+                </li>
+            </div>
+        </nav>
+    </header>
     <main>
         <div>
             <div class="pay-process">
@@ -24,25 +41,29 @@
                 <div class="selection-options">
                     <div class="option">
                         <input type="radio" id="bank_transfer" name="payment" value="bank_transfer">
-                        <label for="bank_transfer">銀行振込</label><br>
+                        <label for="bank_transfer"><i class="fa-solid fa-building-columns"></i>銀行振込</label><br>
                     </div>
                     <div class="option">
                         <input type="radio" id="credit_card" name="payment" value="credit_card">
-                        <label for="credit_card">クレジットカード</label><br>
+                        <label for="credit_card"><i class="fa-solid fa-credit-card"></i>クレジットカード</label><br>
                     </div>
                     <div class="option">
                         <input type="radio" id="paypay_online" name="payment" value="paypay_online">
-                        <label for="paypay_online">PayPayオンライン</label>
+                        <label for="paypay_online"><i class="fa-brands fa-paypal"></i>PayPayオンライン</label>
                     </div>
                 </div>
             </div>
 
             <div class="btn-container">
+                <button class="back">戻る</button>
                 <button>確定</button>
-                <button class="back-btn">戻る</button>
             </div>
         </div>
     </main>
+    <footer>
+        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+    </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
 </body>
-
 </html>

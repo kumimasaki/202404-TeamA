@@ -4,77 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product_list</title>
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/new_product.css">
 </head>
 <body>
     <header>
-        <nav>
-            <li>サイトアイコン</li>
-            <li>ユーザー名</li>
-            <li>マイページ</li>
-            <li>講座一覧</li>
-            <li>カート</li>
+        <nav class="nav-list">
+            <div class="left-items">
+                <li><img src="img/IT_logo.png" alt=""></li>
+                <li><p class="site-name">ITコース販売サイト</p></li>
+            </div>
+            <div class="right-items">
+                <li>ユーザー名</li>
+                <li><i class="fa-solid fa-shop"></i>講座一覧</li>
+                <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
+                <li class="user-menu">
+                    <i class="fa-solid fa-user-tie"></i>マイページ
+                    <ul class="dropdown">
+                        <li><i class="fa-solid fa-right-from-bracket"></i>ログアウト</li>
+                    </ul>
+                </li>
+            </div>
         </nav>
     </header>
-    <main >
-        <h2>講座一覧</h2>
-       
-        <form action="#" method="post" enctype="multipart/form-data" class="course-item">
-            <img src="img/beef.jpg" alt="" class="list-course-img">
-            <div>
-                <p>java初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <div class="product-detail-btn-container">
-                <button class="add-cart-btn">カートに追加</button>
-                <button class="list-to-detail-btn">詳細</button>
-            </div>
-        </form>
-   
-        <form action="#" method="post" enctype="multipart/form-data" class="course-item">
-            <img src="img/coffee.jpg" alt="" class="list-course-img">
-            <div>
-                <p>JavaScript初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <div class="product-detail-btn-container">
-                <button class="add-cart-btn">カートに追加</button>
-                <button class="list-to-detail-btn">詳細</button>
-            </div>
-        </form>
-        <form action="#" method="post" enctype="multipart/form-data" class="course-item">
-            <img src="img/coffee.jpg" alt="" class="list-course-img">
-            <div>
-                <p>CSS初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <div class="product-detail-btn-container">
-                <button class="add-cart-btn">カートに追加</button>
-                <button class="list-to-detail-btn">詳細</button>
-            </div>
-        </form>
-        <form action="#" method="post" enctype="multipart/form-data" class="course-item">
-            <img src="img/orange.jpg" alt="" class="list-course-img">
-            <div>
-                <p>css初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <div class="product-detail-btn-container">
-                <button class="add-cart-btn">カートに追加</button>
-                <button class="list-to-detail-btn">詳細</button>
-            </div>
-        </form>
+    <main>
+        <div class="title">
+            <h2>講座一覧</h2>
+        </div>
+        <div class="course-list">
+            <form action="#" method="post" enctype="multipart/form-data" class="course-item">
+                <img src="img/me.png" alt="" class="list-course-img">
+                <div>
+                    <p>java初心者コース</p>
+                </div>
+                <div>
+                    <p>値段 : 12000円</p>
+                </div>
+                <div class="list-btn-container">
+                    <button >カートに追加</button>
+                    <button class="list-detail">詳細</button>
+                </div>
+            </form>
+    
+            <form action="#" method="post" enctype="multipart/form-data" class="course-item">
+                <img src="img/me.png" alt="" class="list-course-img">
+                <div>
+                    <p>JavaScript初心者コース</p>
+                </div>
+                <div>
+                    <p>値段 : 12000円</p>
+                </div>
+                <div class="list-btn-container">
+                    <button>カートに追加</button>
+                    <button class="list-detail">詳細</button>
+                </div>
+            </form>
+            <form action="#" method="post" enctype="multipart/form-data" class="course-item">
+                <img src="img/me.png" alt="" class="list-course-img">
+                <div>
+                    <p>CSS初心者コース</p>
+                </div>
+                <div>
+                    <p>値段 : 12000円</p>
+                </div>
+                <div class="list-btn-container">
+                    <button>カートに追加</button>
+                    <button class="list-detail">詳細</button>
+                </div>
+            </form>
+            <form action="#" method="post" enctype="multipart/form-data" class="course-item">
+                <img src="img/me.png" alt="" class="list-course-img">
+                <div>
+                    <p>css初心者コース</p>
+                </div>
+                <div>
+                    <p>値段 : 12000円</p>
+                </div>
+                <div class="list-btn-container">
+                    <button>カートに追加</button>
+                    <button class="list-detail">詳細</button>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
     </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
 </body>
 </html>
