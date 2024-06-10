@@ -10,46 +10,61 @@
 
 <body>
     <header>
-        <nav>
-            <li>サイトアイコン</li>
-            <li>ユーザー名</li>
-            <li>マイページ</li>
-            <li>講座一覧</li>
-            <li>カート</li>
+        <nav class="nav-list">
+            <div class="left-items">
+                <li><img src="img/IT_logo.png" alt=""></li>
+                <li><p class="site-name">ITコース販売サイト</p></li>
+            </div>
+            <div class="right-items">
+                <li>ユーザー名</li>
+                <li><i class="fa-solid fa-shop"></i>講座一覧</li>
+                <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
+                <li class="user-menu">
+                    <i class="fa-solid fa-user-tie"></i>マイページ
+                    <ul class="dropdown">
+                        <li><i class="fa-solid fa-right-from-bracket"></i>ログアウト</li>
+                    </ul>
+                </li>
+            </div>
         </nav>
     </header>
     <main>
-        <h2>カート一覧</h2>
+        <div class="title">
+            <h2>カート一覧</h2>
+        </div>
+        
         <form action="#" method="post" enctype="multipart/form-data" class="cart-item">
-            <img src="img/coffee.jpg" alt="" class="cart-item-img">
+            <img src="img/me.png" alt="" class="cart-item-img">
             <div class="cart-course-info">
                 <p>時間 : 2024/06/04 12:00 ~ 1400</p>
                 <p>HTML初心者コース</p>
                 <p>値段 : 12000円</p>
-                <button class="cart-list-delete-btn">削除</button>
+                <button class="cart-delete-btn"><i class="fa-solid fa-trash"></i>削除</button>
             </div>
         </form>
         <form action="#" method="post" enctype="multipart/form-data" class="cart-item">
-            <img src="img/lemon.jpg" alt="" class="cart-item-img">
+            <img src="img/me.png" alt="" class="cart-item-img">
             <div class="cart-course-info">
                 <p>時間 : 2024/06/04 12:00 ~ 1400</p>
                 <p>HTML中級者コース</p>
                 <p>値段 : 16000円</p>
-                <button class="cart-list-delete-btn">削除</button>
+                <button class="cart-delete-btn"><i class="fa-solid fa-trash"></i>削除</button>
             </div>
         </form>
         <hr>
-        <div class="total-money">
+        <div class="total">
             <p>合計金額 : 28000円</p>
         </div>
-        <div class="cart-list-btn-container">
+        <div class="cart-btn-container">
             <button>購入</button>
-            <button class="back-btn">戻る</button>
+            <button class="back">戻る</button>
         </div>
     </main>
     <footer>
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
     </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
 </body>
 
 </html>

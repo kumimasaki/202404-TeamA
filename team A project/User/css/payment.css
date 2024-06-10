@@ -22,6 +22,7 @@ main  {
     justify-content: center;
     /* 子要素を横方向に中央に配置する設定。 */
     align-items: center;
+    width: 100%;
   }
 
 header {
@@ -115,53 +116,6 @@ footer small {
     font-size: 0.8em;
 }
 
-/* ここからは講座詳細一覧のCSS */
-
-.detail-form {
-    width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #FFE1C6;
-    text-align: center;
-}
-
-.detail-form p{
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.title p {
-    font-size: 25px;
-    font-weight: 600;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-}
-
-.course-detail-img img {
-    width: 100%;
-    width: 350px;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-  
-.detail {
-    text-align: left;
-}
-
-textarea{
-    resize: none;
-    width: 100%;
-    height: 300px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 20px;
-    outline: none;
-  }
-
-  
-  
-/* すべてのボタン */
 button {
     padding: 10px 20px;
     font-size: 15px;
@@ -185,12 +139,12 @@ button:hover {
 .btn-container{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin: 15px 0;
   }
    
 .btn-container button {
-    margin: auto 10%;
-    font-size: 18px;
+    margin: 20px;
+    font-size: 16px;
   }
    
 .back {
@@ -202,121 +156,136 @@ button:hover {
     background-color: #787575;
   }
 
-  /* ここからはproduct_listのcss */
+/* payment-selection page */
 
+.pay-process{
+    text-align: center;
+     margin-top: 60px;
+     font-size: 25px;
+   }
+   
+   .mark{
+     color: #3FBD4C;
+   }
+   
+   .other-process{
+     color: #c0c0c0;
+   }
+   
+   .pay-selection {
+     margin: 20px;
+     background-color: #EFBB24;
+     padding: 60px;
+     display: flex;
+     font-size: 30px;
+     align-items: center;
+     
+   }
+   
+   .pay-selection p {
+     margin-right: 20px;
+   }
+   
+   .selection-options {
+     display: flex;
+     flex-direction: column;
+   }
+
+   .selection-options i {
+    margin-right: 5px;
+  }
+   
+   .option {
+     margin: 20px;
+     display: flex;
+     /* 子要素を横方向に中央に配置する設定。 */
+     align-items: center;
+     margin-bottom: 10px;
+   }
+   
+   .option input {
+     margin-right: 10px;
+   }
+   
+   
+   /* payment-confirm page */
+   .confirm-contents-container{
+    padding: 20px;
+     display: flex;
+     justify-content: center;
+   }
+   
+   ul{
+     /* デフォルトの箇条書きの点を削除する */
+     list-style-type: none; 
+   }
+   
+   li {
+     margin: 15px 0; 
+   }
+
+   .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
   
-.title h2 {
-  margin-top: 30px;
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 5px;
-  margin-bottom: 10px;
-}
+  .cart-item-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
-.course-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
+  .cart-course-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart-course-info p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+   
+  .separate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+  }
 
-.course-item {
-  display: flex;
-  /* 子要素を縦方向（上から下）に並べる */
-  flex-direction: column;
-  /* 横方向に中央に配置する設定 */
-  align-items: center;
-  width: 45%;
-  margin: 20px;
-  padding: 20px;
-}
+  .separate p{
+    font-size: 18px;
+  }
+  
+  .separate i{
+    margin: 0 5px;
+  }
+  
+  hr {
+    border: none;
+    height: 2px;
+    background-color: #333;
+    width: 100%;
+    margin-bottom: 25px;
+  }
 
-.course-item p {
-  font-size: 18px;
-  margin: 10px;
-}
+  /* payment_success page */
 
-.list-course-img {
-  width: 100%;
-  max-width: 300px;
-  height: 250px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  .success-message {
+    margin: 20px;
+     background-color: #EFBB24;
+     padding: 100px;
+     font-size: 30px;
+     align-items: center;
+  }
+  .myPage {
+    background-color: #F7C242;
+  }
 
-.list-btn-container {
-  display: flex;
-  justify-content: center;
-  margin: 5px; 
-}
-
-.list-btn-container button {
-  margin: 10px; 
-  font-size: 14px;
-}
-
-.list-detail {
-  background-color: #d3480d;
-}
-
-.list-detail:hover {
-  background-color: #ff2600;
-}
-
- /* ここからはcart_listのcss */
-
- .cart-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-.cart-item-img {
-  width: 260px;
-  height: 180px;
-  object-fit: cover;
-  margin-right: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.cart-course-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-course-info p {
-  margin: 10px 0;
-  font-size: 20px;
-}
-
-.cart-delete-btn{
-  align-self: flex-end;
-  background-color: #ea7911;
-}
-
-.cart-delete-btn:hover{
-  background-color: #c40606;
-}
-
-.cart-delete-btn i {
-  margin-right: 5px;
-}
-
-hr {
-  border: none;
-  height: 2px;
-  background-color: #333;
-  width: 100%;
-  margin-bottom: 25px;
-}
-
-.total{
-  align-self: flex-end;
-  margin-right: 20px;
-}
-
-.cart-btn-container button{
-  font-size: 18px;
-  margin: 30px 70px;
-}
+  .myPage:hover {
+    background-color: #ffb300;
+  }

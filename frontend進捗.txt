@@ -30,3 +30,12 @@ product_list,product_detailのCSS完成しました。
 ゴサイフォン
 
 userloginとregisterに関するcss完成。navバーとfooterもうok!
+
+2024/06/07 17:41
+ゴサイフォン
+
+userとadminの基本css完成
+
+
+
+
