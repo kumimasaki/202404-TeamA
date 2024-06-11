@@ -28,7 +28,6 @@ CREATE TABLE IF NOT EXISTS public.course
     course_detail VARCHAR(255) NOT NULL,
     course_fee VARCHAR(255) NOT NULL,
     course_image VARCHAR(255) NOT NULL,
-    register_date timestamp without time zone,
     admin_id bigint,
     CONSTRAINT course_pkey PRIMARY KEY (course_id),
     CONSTRAINT course_admin_fk FOREIGN KEY (admin_id) REFERENCES public.admin (admin_id)

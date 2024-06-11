@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin_register</title>
-    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <link rel="stylesheet" th:href="@{/css/admin/register.css}">
 </head>
 
 <body>
@@ -22,10 +22,10 @@
                         <i class="fa-solid fa-envelope"></i>
                         <input type="text" name="adminEmail" id="email" placeholder="メールアドレス" required>
                     </div>
-                        <p class="error-message" th:if="${error}">メールアドレスは既に登録しました</p>
+                    <!-- <p class="error-message" th:if="${error}">メールアドレスは既に登録しました</p> -->
                     <div class="row">
                         <i class="fas fa-lock"></i>
-                        <input type="text" name="adminPassword" id="password" placeholder="パスワード" required>
+                        <input type="password" name="adminPassword" id="password" placeholder="パスワード" required>
                     </div>
                     <div class="row button">
                         <input type="submit" value="新規登録">

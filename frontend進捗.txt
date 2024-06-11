@@ -36,6 +36,9 @@ userloginとregisterに関するcss完成。navバーとfooterもうok!
 
 userとadminの基本css完成
 
+2024/06/11 17:39
+ゴサイフォン
 
+thymeleafとcontroller若干修正しました。
 
 
