@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>course_register_confirm</title>
-    <link rel="stylesheet" th:href="@{/css/course.css}">
+    <link rel="stylesheet" th:href="@{/css/admin/course.css}">
 </head>
 
 <body>
     <header>
         <ul class="header-list">
-            <li class="left-item"><a href="#">管理者名 ようこそ！</a></li>
+            <li class="left-item"><a href="#" th:text="${adminName}+'  ようこそ！'"></a></li>
             <div class="right-items">
                 <li><a th:href="@{/admin/course/list}">講座一覧</a></li>
                 <li><a th:href="@{/admin/logout}">ログアウト</a></li>

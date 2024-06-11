@@ -1,5 +1,6 @@
 package ecSite.example.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,8 @@ public class UsersService {
 	public boolean createNotConfirmedUser(
 			String userName,
 			String userEmail,
-			String userPassword,
-			String userTelephone) {
+			String userPassword
+				) {
 		// もし、findByUserEmail==nullだったら
 		// NotConfirmedUserに情報を渡して、trueを渡す
 		// そうでない場合、ユーザー登録処理失敗 false
@@ -26,8 +27,8 @@ public class UsersService {
 			notConfirmedUser = new UsersEntity(
 					userName,
 					userEmail,
-					userPassword,
-					userTelephone);
+					userPassword
+					);
 			return true;
 		} else {
 			return false;
@@ -61,9 +62,9 @@ public class UsersService {
 	}
 	
 	// パスワードリセット確認処理
-	public boolean resetCheck(String userEmail, String userPassword) {
-		UsersEntity usersEntity = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
-		//もし、emailとpasswordがfindByUserEmailAndUserPasswordを使用して存在しなかった場合==nullの場合、
+	public boolean resetCheck(String userName, String userEmail) {
+		UsersEntity usersEntity = usersDao.findByUserNameAndUserEmail(userName, userEmail);
+		//もし、userNameとuserEmailがfindByUserNameAndUserEmailを使用して存在しなかった場合==nullの場合、
 		//その場合、存在しないnullであることをコントローラークラスに知らせる
 		//そうでない場合、NotConfirmedUserにユーザーの情報を渡して、trueをコントローラークラスに渡す
 		if (usersEntity == null) {

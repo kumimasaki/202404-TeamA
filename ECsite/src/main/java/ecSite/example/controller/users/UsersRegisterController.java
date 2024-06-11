@@ -19,7 +19,7 @@ public class UsersRegisterController {
 	@GetMapping("/user/register")
 	public String getUsersRegisterPage(Model model) {
 		model.addAttribute("notConfirmedUser", new UsersEntity());
-		return "user_register.html";
+		return "user/user_register.html";
 	}
 	
 	// ユーザー登録確認処理
@@ -27,18 +27,17 @@ public class UsersRegisterController {
 	public String usersConfirm(
 			@RequestParam String userName,
 			@RequestParam String userEmail,
-			@RequestParam String userPassword,
-			@RequestParam String userTelephone,
+			@RequestParam String userPasswor,
 			Model model) {
 		// もし、createNotConfirmedUserがtrueだったら、user_register_confirm.htmlに遷移
 		// そうでない場合、user_register.htmlにとどまります
-		if(usersService.createNotConfirmedUser(userName, userEmail, userPassword, userTelephone)) {
+		if(usersService.createNotConfirmedUser(userName, userEmail, userPassword)) {
 			UsersEntity notConfirmedUser = usersService.getNotConfirmedUser();
 			model.addAttribute("notConfirmedUser", notConfirmedUser);
-			return "user_register_confirm.html";
+			return "user/user_register_confirm.html";
 		} else {
 			model.addAttribute("error", "このメールアドレスはすでに存在してます");
-			return "user_register.html";
+			return "user/user_register.html";
 		}
 	}
 	

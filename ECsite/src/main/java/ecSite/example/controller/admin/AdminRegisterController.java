@@ -21,7 +21,7 @@ public class AdminRegisterController {
 	@GetMapping("/admin/register")
 	public String getAdminRegisterPage(Model model) {
 		model.addAttribute("error", false);
-		return "admin_register.html";
+		return "admin/admin_register.html";
 	}
 
 	// 管理者登録処理
@@ -36,10 +36,10 @@ public class AdminRegisterController {
 			session.setAttribute("adminName", adminName);
 			session.setAttribute("adminEmail",adminEmail);
 			session.setAttribute("adminPassword", adminPassword);
-			return "admin_register_confirm.html";
+			return "admin/admin_register_confirm.html";
 		} else {
 			model.addAttribute("error", true);
-			return "admin_register.html";
+			return "admin/admin_register.html";
 		}
 	}
 
@@ -52,11 +52,11 @@ public class AdminRegisterController {
 		String password = (String) session.getAttribute("adminPassword");
 		if(adminService.createAdmin(name, email, password)) {
 			session.invalidate();
-			return "admin_login.html";
+			return "admin/admin_login.html";
 		}else {
 			model.addAttribute("error", true);
 			session.invalidate();
-			return "admin_register.html";
+			return "admin/admin_register.html";
 			
 		}
 		

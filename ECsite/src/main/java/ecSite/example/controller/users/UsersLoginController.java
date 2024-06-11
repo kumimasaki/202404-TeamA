@@ -24,7 +24,7 @@ public class UsersLoginController {
 	@GetMapping("/user/login")
 	public String getUsersLoginPage(Model model) {
 		model.addAttribute("error", false);
-		return "user_login.html";
+		return "user/user_login.html";
 	}
 	
 	// ユーザーログイン処理
@@ -41,7 +41,7 @@ public class UsersLoginController {
 		
 		if(usersEntity == null) {
 			model.addAttribute("error", true);
-			return "user_login.html";
+			return "user/user_login.html";
 		} else {
 			session.setAttribute("loginUserInfo", usersEntity);
 			return "redirect:/user/product/list";
