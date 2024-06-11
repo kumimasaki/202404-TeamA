@@ -11,8 +11,8 @@
         <ul class="header-list">
             <li class="left-item"><a href="#" th:text="${adminName}+'  ようこそ！'"></a></li>
             <div class="right-items">
-                <li><a th:href="@{course_list.html}">講座一覧</a></li>
-                <li><a th:href="@{admin_login.html}">ログアウト</a></li>
+                <li><a th:href="@{/admin/course/list}">講座一覧</a></li>
+                <li><a th:href="@{/admin/logout}">ログアウト</a></li>
             </div>
         </ul>
     </header>
@@ -22,7 +22,7 @@
                 <p>講座一覧</p>
             </div>
             <div class="add">
-                <button>追加</button>
+                <button onClick="location.href='/admin/course/register'">追加</button>
             </div>
             <div class="contents">
                 <table border="2">
@@ -31,9 +31,9 @@
                         <th>値段</th>
                         <th></th>
                     </tr>
-                    <tr>
-                        <td>JAVA初心者コース</td>
-                        <td>12000</td>
+                    <tr th:each="course:${courseList}">
+                        <td th:text="${course.courseName}"></td>
+                        <td th:text="${course.courseFee}"></td>
                         <td><button>編集</button></td>
                     </tr>
                     <tr>
