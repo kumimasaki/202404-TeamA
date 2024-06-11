@@ -23,4 +23,13 @@ public interface CourseDao extends JpaRepository<CourseEntity ,Long > {
 
 	//SELECT * FROM course WHERE  courseName = ?
 	//用途：courseの登録チェックに使用　同じcourse名が登録されないようにする
+	CourseEntity findByCourseName(String courseName);
+	
+	//SELECT * FROM course WHERE course_id = ?
+	//用途：編集画面を表示する際に使用
+	CourseEntity findByCourseId(Long courseId);
+	
+	//DELETE FROM course WHERE course_id = ?
+	//用途：　削除処理に使用します
+	void deleteByCourseId(Long courseId);
 }
