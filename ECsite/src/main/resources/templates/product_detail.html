@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product_detail</title>
+    <link rel="stylesheet" th:href="@{/css/user/product.css}">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-list">
+            <div class="left-items">
+                <li><img src="img/IT_logo.png" alt=""></li>
+                <li><p class="site-name">ITコース販売サイト</p></li>
+            </div>
+            <div class="right-items">
+                <li th:text="${userName}">ユーザー名</li>
+                <li><i class="fa-solid fa-shop"></i>講座一覧</li>
+                <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
+                <li class="user-menu">
+                    <i class="fa-solid fa-user-tie"></i>マイページ
+                    <ul class="dropdown">
+                        <li><i class="fa-solid fa-right-from-bracket"></i>ログアウト</li>
+                    </ul>
+                </li>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2> 講座の詳細一覧</h2>
+		<form action="#" method="post" enctype="multipart/form-data">
+		    <div class="course-detail-img">
+		        <img th:src="@{/course-img/{image}(image=${product.courseImage})}" alt="">
+		    </div>
+		    <div>
+		        <p>開催日 : <span th:text="${product.startDate}"></span></p>
+		    </div>
+		    <div>
+		        <p>開始時間 : <span th:text="${product.startTime}"></span></p>
+		    </div>
+		    <div>
+		        <p>終了時間 : <span th:text="${product.finishTime}"></span></p>
+		    </div>
+		    <div>
+		        <p>値段 : <span th:text="${product.courseFee}"></span>円</p>
+		    </div>
+		    <div>
+		        <p>講座詳細：</p>
+		        <textarea rows="5" cols="33" th:text="${product.courseDetail}"></textarea>
+		    </div>
+		    <div class="product-detail-btn-container ">
+		        <button class="add-cart-btn">カートに追加</button>
+		        <button class="back-btn" th:onclick="location.href='/user/product/list'">戻る</button>
+		    </div>
+		</form>
+    </main>
+    <footer>
+        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+    </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
+</body>
+
+</html>

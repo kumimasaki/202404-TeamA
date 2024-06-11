@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product_list</title>
-    <link rel="stylesheet" href="">
+	<link rel="stylesheet" th:href="@{/css/user/product.css}">
 </head>
 
 <body>
@@ -21,50 +21,17 @@
     </header>
     <main>
         <p>講座一覧</p>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <img src="img/me.png" alt="">
-            <div>
-                <p>java初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <button>詳細</button>
-            <button>カートに追加</button>
-        </form>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <img src="img/me.png" alt="">
-            <div>
-                <p>JavaScript初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <button>詳細</button>
-            <button>カートに追加</button>
-        </form>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <img src="img/me.png" alt="">
-            <div>
-                <p>CSS初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <button>詳細</button>
-            <button>カートに追加</button>
-        </form>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <img src="img/me.png" alt="">
-            <div>
-                <p>css初心者コース</p>
-            </div>
-            <div>
-                <p>値段 : 12000円</p>
-            </div>
-            <button>詳細</button>
-            <button>カートに追加</button>
-        </form>
+		<form th:each="product : ${productList}" enctype="multipart/form-data">
+		    <img th:src="@{/course-img/{image}(image=${product.courseImage})}" alt="">
+		    <div>
+		        <p th:text="${product.courseName}">java初心者コース</p>
+		    </div>
+		    <div>
+		        <p th:text="'値段 : ' + ${product.courseFee} + '円'">値段 : 12000円</p>
+		    </div>
+			<button type="button" th:onclick="|location.href='/user/product/detail/' + ${product.courseId}|">詳細</button>
+		    <button>カートに追加</button>
+		</form>
     </main>
     <footer>
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>

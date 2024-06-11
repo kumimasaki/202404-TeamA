@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #F7C242; 
+    padding: 10px;
+}
+header img {
+    width: 100px; 
+    height:100px; 
+    margin-right: 10px; 
+}
+header p {
+    margin: 0;
+    font-size: 24px;
+    color: white; 
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body { 
+    margin: 0; 
+    background-color: #FFE1C6;
+}
+
+main {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height:80vh; 
+}
+
+.container {
+    max-width: 500px;
+    padding: 0 20px;
+}
+
+.wrapper {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.title {
+    line-height: 80px;
+    border-radius: 5px 5px 0 0;
+    background-color: #F7C242;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+
+form {
+    padding: 30px 50px 25px 50px;
+}
+
+form .row {
+   height: 45px; 
+   background-color: #fff;
+   margin-bottom: 15px;
+   position: relative;
+}
+
+.row input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.row input[type="text"]:focus,
+.row input[type="password"]:focus {
+    border-color: #F7C242;
+    box-shadow: inset 0px 0px 2px 2px rgba(204, 158, 59, 0.25);
+}
+
+.row i {
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+    background-color: #F7C242;
+    border: 1px solid #F7C242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.remember input {
+    margin-right: 10px;
+    width: auto;
+    
+}
+
+.button input {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 0px;
+    background-color: #F7C242;
+    border: 1px solid #F7C242;
+    cursor: pointer;
+}
+
+.button input:hover {
+    background-color: #e4c16e;
+}
+
+.password {
+    text-align: left;
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.password a {
+    color: #1957db;
+    text-decoration: none;
+}
+
+.password a:hover {
+    text-decoration: underline;
+}
+
+.move {
+    text-align: left;
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.move a {
+    color: #68e46c;
+    text-decoration: none;
+}
+
+.move a:hover {
+    text-decoration: underline;
+}
+.copyright{
+    margin-left: 30px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

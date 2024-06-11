@@ -4,34 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user_login</title>
+	<link rel="stylesheet" th:href="@{/css/user/login.css}">
 </head>
 <body>
-    <header>
-        <h1>ログイン</h1>
-    </header>
-    <main>
-        <section>
-            <form th:action="@{/user/login/process}" method="post">
-                <div>
-                    <label for="userEmail">メールアドレス</label>
-                    <input type="text" name="userEmail" id="email" placeholder="メールアドレスを記入">
-                </div>
-                <div>
-                    <label for="userPassword">パスワード</label>
-                    <input type="text" name="userPassword" id="password" aria-placeholder="パスワードを記入">
-                </div>
-				<p class="error-message" th:if="${error}">メール又はパスワードが間違っている</p>
-                <div>
-                    <button type="submit">ログイン</button>
-                </div>
-                <div>
-                    <a th:href="@{/user/register}">新規登録はこちら</a>
-                </div>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
-    </footer>
+	<header>
+	        <a href="user_login.html"><img src="img/IT_logo.png" alt=""></a>
+	        <p class="site-name">ITコース販売サイト</p>
+	</header>
+	<main>
+	    <div class="container">
+	        <div class="wrapper">
+	            <div class="title">ログイン</div>
+	            <form th:action="@{/user/login/process}" method="post">
+	                <div class="row">
+	                    <i class="fa-solid fa-envelope"></i>
+	                    <input type="text" name="userEmail" id="email" placeholder="メールアドレス" required>
+	                </div>
+	                <div class="row">
+	                    <i class="fas fa-lock"></i>
+	                    <input type="password" name="userPassword" id="password" placeholder="パスワード" required>
+	                </div>
+	                <p class="error-message" th:if="${error}">メール又はパスワードが間違っている</p>
+	                <div class="row remember">
+	                    <input type="checkbox" name="remember" id="remember">
+	                    <label for="remember">メールアドレスを保持する</label>
+	                </div>
+	                <div class="row button">
+	                    <input type="submit" value="ログイン">
+	                </div>
+	                <div class="password"><a th:href="@{/user/password_reset}">パスワード忘れた？</a></div>
+	                <div class="move">新規登録は<a th:href="@{/user/register}">こちら</a></div>
+	            </form>
+	        </div>
+	        <div class="copyright">
+	            <small>copyright&copy;EC-site@2024 Team A - All right reserved</small>
+	        </div>
+	    </div>
+	</main>
+	<script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>   
 </body>
 </html>
