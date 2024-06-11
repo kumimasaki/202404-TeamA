@@ -4,44 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user_register</title>
+	<link rel="stylesheet" th:href="@{/css/user/register.css}">
 </head>
 <body>
-    <header>
-        <h1>登録</h1>
-    </header>
-    <main>
-        <section>
-            <form th:action="@{/user/confirm}" method="post">
-                <div>
-                    <label for="userName">名前</label>
-                    <input type="text" name="userName" id="userName" placeholder="名前を記入">
-                </div>
-                <div>
-                    <label for="userEmail">メールアドレス</label>
-                    <input type="text" name="userEmail" id="userEmail" placeholder="メールアドレスを記入">
-                </div>
-                <div>
-                    <label for="userPassword">パスワード</label>
-                    <input type="text" name="userPassword" id="userPassword" placeholder="パスワードを記入">
-                </div>
-				<div>
-				    <label for="userTelephone">電話番号</label>
-				    <input type="text" name="userTelephone" id="userTelephone" placeholder="電話番号を記入">
-				</div>
-                <div>
-                    <button type="submit">新規登録</button>
-                </div>
-                <div>
-                    <a th:href="@{/user/password_reset}">アカウント再登録はこちら</a>
-                </div>
-				<div th:if="${error}">
-				    <p th:text="${error}"></p>
-				</div>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
-    </footer>
+	<header>
+	    <a href="user_login.html"><img src="img/IT_logo.png" alt=""></a>
+	    <p class="site-name">ITコース販売サイト</p>
+	</header>
+	<main>
+	    <div class="container">
+	        <div class="wrapper">
+	            <div class="title">登録</div>
+	            <form th:action="@{/user/confirm}" method="post">
+	                <div class="row">
+	                    <i class="fa-solid fa-user"></i>
+	                    <input type="text" name="userName" id="username" placeholder="ユーザー名" required>
+	                </div>
+	                <div class="row">
+	                    <i class="fa-solid fa-envelope"></i>
+	                    <input type="text" name="userEmail" id="email" placeholder="メールアドレス" required>
+	                </div>
+	                <div class="row">
+	                    <i class="fas fa-lock"></i>
+	                    <input type="password" name="userPassword" id="password" placeholder="パスワード" required>
+	                </div>
+					<div th:if="${error}">
+					    <p th:text="${error}"></p>
+					</div>
+	                <div class="row button">
+	                    <input type="submit" value="新規登録">
+	                </div>
+	                <div class="move">登録済方は<a th:href="@{/user/login}">こちら</a></div>
+	            </form>
+	        </div>
+	        <div class="copyright">
+	            <small>copyright&copy;EC-site@2024 Team A - All right reserved</small>
+	        </div>
+	    </div>
+	</main>
+	    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script> 
 </body>
 </html>
