@@ -26,7 +26,7 @@ public class ProductListController {
 			return "redirect:/user/login";
 		} else {
 			model.addAttribute("userName", usersEntity.getUserName());
-			return "product_list.html";
+			return "user/product_list.html";
 		}
 	}
 }

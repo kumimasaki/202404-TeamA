@@ -18,23 +18,23 @@ public class UsersPasswordResetController {
 	// パスワードリセットフォームの画面を表示
     @GetMapping("/user/password_reset")
     public String getUsersPasswordResetFormPage(Model model) {
-        return "password_reset_form.html";
+        return "user/password_reset_form.html";
     }
     
     // パスワードリセット確認処理
     @PostMapping("/user/password_reset_confirm")
     public String usersPasswordResetConfirm(
+            @RequestParam String userName,
             @RequestParam String userEmail,
-            @RequestParam String userPassword,
             Model model) {
 		// もし、resetCheckがtrueだったら、password_reset_confirm.htmlに遷移
 		// そうでない場合、password_reset_form.htmlにとどまります
-        if(usersService.resetCheck(userEmail, userPassword)) {
+        if(usersService.resetCheck(userName, userEmail)) {
             model.addAttribute("userEmail", userEmail);
-            return "password_reset_confirm.html";
+            return "user/password_reset_confirm.html";
         } else {
             model.addAttribute("error", "メールアドレスまたはパスワードが正しくありません");
-            return "password_reset_form.html";
+            return "user/password_reset_form.html";
         }
     }
     
@@ -46,10 +46,10 @@ public class UsersPasswordResetController {
             Model model) {
     	if(newPassword.equals(confirmPassword)) {
             usersService.resetUserPassword(newPassword);
-            return "password_reset_success.html";
+            return "user/password_reset_success.html";
     	} else {
             model.addAttribute("error", "入力されたパスワードは一致しません");
-            return "password_reset_confirm.html";
+            return "user/password_reset_confirm.html";
     	}
 
     }
