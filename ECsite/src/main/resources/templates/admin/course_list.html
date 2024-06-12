@@ -32,8 +32,27 @@
                         <th></th>
                     </tr>
                     <tr th:each="course:${courseList}">
-                        <td th:text="${course.courseName}"></td>
-                        <td th:text="${course.courseFee}"></td>
+						<a th:href="@{/admin/course/edit/{courseId}(courseId=${course.courseId})}">
+                          <td th:text="${course.courseName}"></td>
+                          <td th:text="${course.courseFee}"></td>
+						  
+						  </a>
+                          <td><button th:attr="onclick='location.href=\'/admin/course/edit/' + ${course.courseId} + '\''">編集</button></td>
+						
+                    </tr>
+                    <tr>
+                        <td>JAVA中級者コース</td>
+                        <td>16000</td>
+                        <td><button>編集</button></td>
+                    </tr>
+                    <tr>
+                        <td>JAVA上級者コース</td>
+                        <td>20000</td>
+                        <td><button>編集</button></td>
+                    </tr>
+                    <tr>
+                        <td>PHP初心者コース</td>
+                        <td>12000</td>
                         <td><button>編集</button></td>
                     </tr>
                 </table>

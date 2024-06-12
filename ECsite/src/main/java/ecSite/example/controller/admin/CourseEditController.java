@@ -1,9 +1,10 @@
 package ecSite.example.controller.admin;
 
+import java.util.Date;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +63,7 @@ public class CourseEditController {
 
 	// 変更処理
 	@PostMapping("/admin/course/edit/process")
-	public String courseUpdate(@RequestParam Date startDate,
+	public String courseUpdate(@RequestParam java.sql.Date startDate,
 			@RequestParam(name = "startTime") @DateTimeFormat(iso = DateTimeFormat.ISO.TIME) LocalTime startTime,
 			@RequestParam(name = "finishTime") @DateTimeFormat(iso = DateTimeFormat.ISO.TIME) LocalTime finishTime,
 			@RequestParam String courseName, @RequestParam String courseDetail, @RequestParam String courseFee,
@@ -77,7 +78,7 @@ public class CourseEditController {
 			// そうでない場合は、
 		} else {
 			// ファイルの保存
-			String fileName = courseImage.getOriginalFilename();
+			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())+courseImage.getOriginalFilename();
 			try {
 				Files.copy(courseImage.getInputStream(), Path.of("src/main/resources/static/course-img/" + fileName));
 			} catch (IOException e) {

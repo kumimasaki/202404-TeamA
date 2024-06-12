@@ -59,12 +59,13 @@
                         <button class="confirm-button">更新</button>
                         <button class="return" onclick="history.back();" type="button">戻る</button>
                     </div>
+                        <button class="delete">削除</button>
                 </div>
             </form>
 			<form th:action="@{/admin/course/delete}" method="post">
 				<div class="">
 						<input type="hidden" name="courseId" th:value="${course.courseId}">
-						<button class="delete">削除</button>
+						<button class="register">削除</button>
 				</div>
 			</form>
         </section>

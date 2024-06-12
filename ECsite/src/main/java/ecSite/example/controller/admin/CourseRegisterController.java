@@ -1,11 +1,14 @@
 package ecSite.example.controller.admin;
 
+import java.text.SimpleDateFormat;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.sql.Date;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -47,7 +50,7 @@ public class CourseRegisterController {
 
 	//講座登録処理
 	@PostMapping("/admin/course/register/process")
-	public String courseRegisterProcess(@RequestParam Date startDate,
+	public String courseRegisterProcess(@RequestParam java.sql.Date startDate,
 			@RequestParam(name = "startTime") @DateTimeFormat(iso = DateTimeFormat.ISO.TIME) LocalTime startTime, @RequestParam(name = "finishTime") @DateTimeFormat(iso = DateTimeFormat.ISO.TIME) LocalTime finishTime,
 			@RequestParam String courseName, @RequestParam String courseDetail,
 			@RequestParam String courseFee, @RequestParam MultipartFile courseImage,
@@ -67,7 +70,7 @@ public class CourseRegisterController {
 			return "redirect:/admin/login";
 		}else {
 			//ファイルの名前を取得
-			String fileName = courseImage.getOriginalFilename();
+			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())+courseImage.getOriginalFilename();
 			
 			//ファイルの保存作業
 			try {
@@ -76,9 +79,10 @@ public class CourseRegisterController {
 				e.printStackTrace();
 			}
 			
-			if(courseService.createCourse(startDate, startTime, finishTime,
+			if(courseService.createCourse( startDate, startTime, finishTime,
 					courseName, courseDetail, courseFee, 
 					fileName, admin.getAdminId())) {
+				model.addAttribute("adminName",admin.getAdminName());
 				return "admin/course_register_finish.html";
 			}else {
 				return "admin/course_register.html";
