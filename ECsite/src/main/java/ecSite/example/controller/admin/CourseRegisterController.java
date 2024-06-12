@@ -1,4 +1,4 @@
-package ecSite.example.controller;
+package ecSite.example.controller.admin;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package ecSite.example.controller;
+package ecSite.example.controller.admin;
 
 import java.util.List;
 
