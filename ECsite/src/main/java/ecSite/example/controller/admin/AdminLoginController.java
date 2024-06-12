@@ -47,7 +47,7 @@ public class AdminLoginController {
 			return "admin/admin_login.html";
 		}else {
 		    session.setAttribute("loginAdminInfo", adminEntity);
-		    return "redirect:/admin/course/list";
+			return "redirect:/admin/course/list";
 		}
 	}
 

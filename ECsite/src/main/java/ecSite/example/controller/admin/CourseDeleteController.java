@@ -31,7 +31,7 @@ public class CourseDeleteController {
 			if(courseService.deleteCourse(courseId)) {
 				//講座の削除終了ページに移動
 				model.addAttribute("adminName",admin.getAdminName());
-				return "course_delete_finish.html";
+				return "admin/course_delete_finish.html";
 			}else {
 				//そうでない場合は、
 				//編集画面にリダイレクトする

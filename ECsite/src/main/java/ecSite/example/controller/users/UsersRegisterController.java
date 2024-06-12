@@ -48,3 +48,4 @@ public class UsersRegisterController {
 		return "redirect:/user/login";
 	}
 }
+
