@@ -9,48 +9,50 @@
 </head>
 
 <body>
-    <header>
-        <nav class="nav-list">
-            <div class="left-items">
-                <li><img src="img/IT_logo.png" alt=""></li>
-                <li><p class="site-name">ITコース販売サイト</p></li>
-            </div>
-            <div class="right-items">
-                <li>ユーザー名</li>
-                <li><i class="fa-solid fa-shop"></i>講座一覧</li>
-                <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
-                <li class="user-menu">
-                    <i class="fa-solid fa-user-tie"></i>マイページ
-                    <ul class="dropdown">
-                        <li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
-                    </ul>
-                </li>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="title">
-            <h2>講座一覧</h2>
-        </div>
-        <div class="course-list">
-            <form th:each="product : ${productList}" enctype="multipart/form-data" class="course-item">
-                <img th:src="@{/course-img/{image}(image=${product.courseImage})}" alt="" class="list-course-img">
-                <div>
-                    <p th:text="${product.courseName}">java初心者コース</p>
-                </div>
-                <div>
-                    <p th:text="'値段 : ' + ${product.courseFee} + '円'">値段 : 12000円</p>
-                </div>
-                <button type="button" th:onclick="|location.href='/user/product/detail/' + ${product.courseId}|" class="list-detail">詳細</button>
-                <button>カートに追加</button>
-            </form>
-        </div>
-    </main>
-    <footer>
-        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
-    </footer>
-    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
-    <script src="js/code.js"></script>
+	<header>
+	    <nav class="nav-list">
+	        <div class="left-items">
+	            <li><img src="img/IT_logo.png" alt=""></li>
+	            <li><p class="site-name">ITコース販売サイト</p></li>
+	        </div>
+	        <div class="right-items">
+	            <li th:text="${userName}"></li>
+	            <li><i class="fa-solid fa-shop"></i>講座一覧</li>
+	            <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
+	            <li class="user-menu">
+	                <i class="fa-solid fa-user-tie"></i>マイページ
+	                <ul class="dropdown">
+	                    <li><i class="fa-solid fa-right-from-bracket"></i>ログアウト</li>
+	                </ul>
+	            </li>
+	        </div>
+	    </nav>
+	</header>
+	<main>
+	    <div class="title">
+	        <h2>講座一覧</h2>
+	    </div>
+	    <div class="course-list">
+	        <form th:each="product : ${productList}" enctype="multipart/form-data" class="course-item">
+	            <img th:src="@{/course-img/{image}(image=${product.courseImage})}" alt="" class="list-course-img">
+	            <div>
+	                <p th:text="${product.courseName}"></p>
+	            </div>
+	            <div>
+	                <p th:text="'値段 : ' + ${product.courseFee} + '円'"></p>
+	            </div>
+	            <div class="list-btn-container">
+	                <button >カートに追加</button>
+	                <button class="list-detail" type="button" th:onclick="|location.href='/user/product/detail/' + ${product.courseId}|" class="list-detail">詳細</button>
+	            </div>
+	        </form>
+	    </div>
+	</main>
+	<footer>
+	    <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+	</footer>
+	<script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+	<script src="js/code.js"></script>
 </body>
 
 </html>

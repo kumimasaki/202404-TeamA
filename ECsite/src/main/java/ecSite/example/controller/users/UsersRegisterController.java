@@ -1,4 +1,4 @@
-package ecSite.example.controller;
+package ecSite.example.controller.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class UsersRegisterController {
 	public String usersConfirm(
 			@RequestParam String userName,
 			@RequestParam String userEmail,
-			@RequestParam String userPasswor,
+			@RequestParam String userPassword,
 			Model model) {
 		// もし、createNotConfirmedUserがtrueだったら、user_register_confirm.htmlに遷移
 		// そうでない場合、user_register.htmlにとどまります
