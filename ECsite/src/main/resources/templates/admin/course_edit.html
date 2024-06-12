@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>course_edit</title>
+    <link rel="stylesheet" th:href="@{/css/admin/course_register.css}">
+</head>
+<body>
+    <header>
+		<ul class="header-list">
+			 <li class="left-item"><a href="#" th:text="${adminName}+'  ようこそ！'"></a></li>
+			 <div class="right-items">
+			    <li><a th:href="@{/admin/course/list}">講座一覧</a></li>
+				<li><a th:href="@{/admin/logout}">ログアウト</a></li>
+			 </div>
+		</ul>
+    </header>
+    <main>
+        <section>
+            <form th:action="@{/admin/course/edit/process}" method="post" enctype="multipart/form-data">
+                <div class="title">
+                    <p>講座編集</p>
+                </div>
+                <div class="form-top">
+                    <div class="left-top">
+                        <img th:src="@{/course-img/{image}(image=${course.courseImage})}" alt="">
+                        <input type="file" name="courseImage" required>
+                    </div>
+					    <div class="right-top">
+					        <div class="right-form">
+					            <label for="course_name">講座名</label>
+					            <input type="text" name="courseName" th:value="${course.courseName}" id="course_name" placeholder="講座名">
+					        </div>
+					        <div class="right-form">
+					            <label for="amount">料金</label>
+					            <input type="number" name="courseFee" th:value="${course.courseFee}" id="amount" placeholder="金額">
+					        </div>
+					        <div class="right-form">
+					            <label for="starting_date">講座開始日</label>
+					            <input type="date" name="startDate" th:value="${course.startDate}" id="starting_date" >
+					        </div>
+					        <div class="right-form">
+					            <label for="starting_time">講座開始時間</label>
+					            <input type="time" name="startTime" th:value="${course.startTime}" id="starting_time">
+					        </div>
+					        <div class="right-form">
+					            <label for="finish_time">講座終了時間</label>
+					            <input type="time" name="finishTime" th:value="${course.finishTime}" id="finish_time">
+					        </div>
+					    </div>
+					</div>
+                <div class="form-bottom">
+                    <label for="detail">詳細内容</label>
+                    <textarea name="courseDetail" th:text="${course.courseDetail}" id="detail" placeholder="講座内容紹介"></textarea>
+                
+                    <div class="button-gourp">
+						<input type="hidden" name="courseId" th:value="${course.courseId}">
+                        <button class="confirm-button">更新</button>
+                        <button class="return" onclick="history.back();" type="button">戻る</button>
+                    </div>
+                </div>
+            </form>
+			<form th:action="@{/admin/course/delete}" method="post" class="delete-form">
+			      	<input type="hidden" name="courseId" th:value="${course.courseId}">
+			       	<button class="delete">削除</button>
+			 </form>
+        </section>
+    </main>
+    <footer>
+        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+    </footer>
+</body>
+</html>

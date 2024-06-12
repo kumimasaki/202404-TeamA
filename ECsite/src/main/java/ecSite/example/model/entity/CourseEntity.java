@@ -30,7 +30,7 @@ public class CourseEntity {
 	
 	//start_dateの設定
 	@NonNull
-	private java.sql.Date startDate;
+	private Date startDate;
 	
 	//start_timeの設定
 	@NonNull

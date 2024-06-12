@@ -55,7 +55,7 @@ public class CourseEditController {
 			} else {
 				model.addAttribute("adminName", admin.getAdminName());
 				model.addAttribute("course", course);
-				return "course_edit.html";
+				return "admin/course_edit.html";
 			}
 
 		}
@@ -89,7 +89,7 @@ public class CourseEditController {
 			if (courseService.courseUpdate(courseId, startDate, startTime, finishTime, courseName, courseDetail,
 					courseFee, fileName, admin.getAdminId())) {
 				model.addAttribute("adminName",admin.getAdminName());
-				return "course_edit_finish.html";
+				return "admin/course_edit_finish.html";
 			} else {
 				return "redirect:/admin/course/edit";
 			}

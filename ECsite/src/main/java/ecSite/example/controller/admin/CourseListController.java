@@ -21,24 +21,25 @@ public class CourseListController {
 	private HttpSession session;
 	
 	@Autowired
-	private CourseService courseService; 
+	private CourseService courseService;
+	
 	
 	//口座一覧画面の表示
 	@GetMapping("/admin/course/list")
 	public String getCourseListPage(Model model) {
 		//sessionからログインしてる人の情報を取得
-		AdminEntity admin = (AdminEntity) session.getAttribute("loginAdminInfo");
+		AdminEntity adminEntity = (AdminEntity) session.getAttribute("loginAdminInfo");
 		
 		//もし、adminEntity== null ログイン画面にリダイレクトする
 		//そうでない場合は、ブログ一覧のhtmlを表示してloginしている人の情報を画面に渡す
-		if(admin ==null) {
+		if(adminEntity == null) {
 			return "redirect:/admin/login";
 		}else {
 			//講座の情報を取得する
-			List<CourseEntity> courseList = courseService.selectAllCourseList(admin.getAdminId());
-			model.addAttribute("adminName",admin.getAdminName());
+			List<CourseEntity> courseList = courseService.selectAllCourseList(adminEntity.getAdminId());
+			model.addAttribute("adminName",adminEntity.getAdminName());
 			model.addAttribute("courseList", courseList);
-			return "admin/course_list.html";
+			return"admin/course_list.html";
 		}
 		
 	}

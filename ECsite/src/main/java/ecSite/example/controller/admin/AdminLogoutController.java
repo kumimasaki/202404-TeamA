@@ -21,3 +21,4 @@ public class AdminLogoutController {
 		return "redirect:/admin/login";
 	}
 }
+
