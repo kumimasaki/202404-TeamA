@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment_confirm</title>
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+	<header>
+		<nav class="nav-list">
+	    	<div class="left-items">
+	        	<li><img th:src="@{/img/IT_logo.png}" alt=""></li>
+	            <li><p class="site-name">ITコース販売サイト</p></li>
+	         </div>
+	         <div class="right-items">
+	            <li th:text="${userName}"></li>
+	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
+	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
+	            <li class="user-menu">
+	            <i class="fa-solid fa-user-tie"></i>マイページ
+	            	<ul class="dropdown">
+	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
+	                </ul>
+	            </li>
+	         </div>
+	    </nav>
+	</header>
+    <main>
+            <div class="pay-process">
+                <span class="other-process">お支払い方法選択</span>
+                <span class="mark">&#x25B6;</span>
+                <span class="now-process">申し込む内容確認</span>
+                <span class="mark">&#x25B6;</span>
+                <span class="other-process">申し込み完了</span>
+            </div>
+            
+            <div class="confirm-contents-container">
+                <ul>
+                    <li>
+                        <div class="cart-item">
+                            <img src="img/me.png" alt="" class="cart-item-img">
+                            <div class="cart-course-info">
+                            <p>時間 : yyyy/mm/dd  12:00 ~ 14:00</p>
+                       
+                            <p>HTML初心者コース</p>
+                       
+                            <p>値段 : 12000円</p>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cart-item">
+                            <img src="img/me.png" alt="" class="cart-item-img">
+                            <div class="cart-course-info">
+                            <p>時間 : yyyy/mm/dd  12:00 ~ 14:00</p>
+                       
+                            <p>HTML初心者コース</p>
+                        
+                            <p>値段 : 12000円</p>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="separate">
+                    <p class="payment-confirm">お支払い方法 :<i class="fa-solid fa-credit-card"></i>クレジットカード</p>
+                    <p class="total">合計金額 : 24000円</p>
+            </div>
+            <div class="btn-container">
+                <button class="back">戻る</button>
+                <button>決済確定</button>
+            </div>
+    </main>
+    <footer>
+        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+    </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
+</body>
+</html>

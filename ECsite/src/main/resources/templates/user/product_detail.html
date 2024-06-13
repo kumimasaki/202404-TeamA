@@ -10,26 +10,26 @@
 
 <body>
 	<header>
-	        <nav class="nav-list">
-	            <div class="left-items">
-	                <li><img th:src="@{/img/IT_logo.png}" alt=""></li>
-	                <li><p class="site-name">ITコース販売サイト</p></li>
-	            </div>
-	            <div class="right-items">
-	                <li th:text="${userName}"></li>
-	                <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
-	                <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
-	                <li class="user-menu">
-	                    <i class="fa-solid fa-user-tie"></i>マイページ
-	                    <ul class="dropdown">
-	                        <li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
-	                    </ul>
-	                </li>
-	            </div>
-	        </nav>
-	    </header>
+		<nav class="nav-list">
+	    	<div class="left-items">
+	        	<li><img th:src="@{/img/IT_logo.png}" alt=""></li>
+	            <li><p class="site-name">ITコース販売サイト</p></li>
+	         </div>
+	         <div class="right-items">
+	            <li th:text="${userName}"></li>
+	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
+	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
+	            <li class="user-menu">
+	            <i class="fa-solid fa-user-tie"></i>マイページ
+	            	<ul class="dropdown">
+	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
+	                </ul>
+	            </li>
+	         </div>
+	    </nav>
+	</header>
     <main>
-        <form class="detail-form" action="#" method="post" enctype="multipart/form-data">
+        <form th:action="@{/add-to-cart/process}" method="post" enctype="multipart/form-data" class="detail-form" >
             <div class="title">
                 <p th:text="${courseName}"> </p>
             </div>
@@ -53,8 +53,9 @@
 				<textarea readonly rows="5" cols="33" th:text="${product.courseDetail}"></textarea>
             </div>
             <div class="btn-container">
-                <button class="add">カートに追加</button>
-                <button class="back" type="button" onClick="location.href='/user/product/list'">戻る</button>
+				<input type="hidden" name="courseId" th:value="${product.courseId}" />
+                <button class="add" onClick="cartCheck()"　>カートに追加</button>
+				<button class="back" onclick="history.back();" type="button">戻る</button>
             </div>
         </form>
     </main>
@@ -62,7 +63,14 @@
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
     </footer>
     <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
-    <script src="js/code.js"></script>
+	<script>
+	    function cartCheck() {
+	        alert('カートに追加しました。')
+	    }
+	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+				integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="./js/common.js"></script>
 </body>
 
 </html>
