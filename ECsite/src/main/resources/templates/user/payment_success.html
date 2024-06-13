@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment_success</title>
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+	<header>
+		<nav class="nav-list">
+	    	<div class="left-items">
+	        	<li><img th:src="@{/img/IT_logo.png}" alt=""></li>
+	            <li><p class="site-name">ITコース販売サイト</p></li>
+	         </div>
+	         <div class="right-items">
+	            <li th:text="${userName}"></li>
+	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
+	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
+	            <li class="user-menu">
+	            <i class="fa-solid fa-user-tie"></i>マイページ
+	            	<ul class="dropdown">
+	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
+	                </ul>
+	            </li>
+	         </div>
+	    </nav>
+	</header>
+    <main>
+        <div class="pay-process">
+            <span class="other-process">お支払い方法選択</span>
+            <span class="mark">&#x25B6;</span>
+            <span class="other-process">申し込む内容確認</span>
+            <span class="mark">&#x25B6;</span>
+            <span class="now-process">申し込み完了</span>
+        </div>
+        <div class="success-message">
+            <p>申し込む完了しました。</p>
+            <p>ご購入ありがとうございます！！</p>
+        </div>
+
+        <div class="btn-container">
+            <button>講座一覧へ</button>
+            <button class="myPage">マイページへ</button>
+        </div>
+    </main>
+    <footer>
+        <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+    </footer>
+    <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+    <script src="js/code.js"></script>
+</body>
+</html>

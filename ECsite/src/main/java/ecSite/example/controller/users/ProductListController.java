@@ -36,6 +36,10 @@ public class ProductListController {
 			List<CourseEntity> productList = productService.selectAllProductList(usersEntity.getUserId());
 			model.addAttribute("userName", usersEntity.getUserName());
 			model.addAttribute("productList", productList);
+			if (productList.isEmpty()) {
+				model.addAttribute("empty", true);
+			}
+			model.addAttribute("empty", false);
 			return "user/product_list.html";
 		}
 	}
