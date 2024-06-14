@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* 共通部分 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body {
+  background-color: #FFE1C6;
+}
+
+
+main  {
+  display: flex;
+   /* 子要素を縦方向（上から下）に並べる */
+   flex-direction: column;
+  /* 子要素を(縦方向)に中央に配置する */
+  justify-content: center;
+  /* 子要素を横方向に中央に配置する設定。 */
+  align-items: center;
+  padding: 15px;
+  flex-grow: 1; 
+  padding-bottom: 100px;
+
+}
+
+header {
+  background-color: #F7C242; 
+  padding: 10px 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-items {
+  display: flex;
+  margin-left: 10px;
+}
+
+.left-items img {
+  width: 100px; 
+  height:100px; 
+  margin-left: 10px;
+}
+
+.left-items p {
+  margin: 40px 0 0 0;
+  font-size: 24px;
+  color: white; 
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.right-items {
+  display: flex;
+  margin-right: 20px; 
+}
+
+.right-items li{
+  color: #fff;
+  margin: 0 15px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.right-items i {
+  color: #847d6f;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.dropdown {
+  display: none; 
+  position: absolute; 
+  background-color: #F7C242; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  z-index: 1; 
+  right: 0; 
+  min-width: 180px;
+}
+
+.dropdown li {
+  display: flex;
+  font-size: 20px;
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown li i {
+  margin-right: 10px;
+}
+
+.user-menu:hover .dropdown {
+  display: block;
+}
+
+footer {
+  background-color: #F7C242;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+} 
+
+footer small {
+  font-size: 0.8em;
+}
+
+.title{
+  font-size: 25px;
+  margin: 25px;
+}
+
+/* すべてのボタン */
+button {
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  /* マウス様子 */
+  cursor: pointer;
+  /* 効果 */
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #4CAF50;
+  color: white;
+  margin: 7px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #1abc22;
+} 
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+ 
+.btn-container button {
+  margin: auto 10%;
+  font-size: 18px;
+}
+ 
+.back {
+  background-color: #846d6d;
+  color: #fff;
+}
+
+.back:hover {
+  background-color: #787575;
+}
+
+
+
+/* 他の部分 */
+.my-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.my-page-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%; 
+  margin: 0 10px; 
+  padding: 10px; 
+ background-color: rgb(228, 197, 160);
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.my-page-item img {
+  object-fit: cover; 
+  width: 200px; 
+  height: 200px; 
+  margin-bottom: 20px;
+}
+
+.my-page-item a {
+  text-decoration: none;
+  color: #635d53;
+  font-size: 18px;
+  font-weight: 600; 
+  transition: color 0.3s ease, text-decoration 0.3s ease; /*効果 */
+  margin-bottom: 10px;
+}
+
+
+a:hover {
+  text-decoration: none;
+  color: rgb(221, 137, 28);
+}
+
+
+/* product-like page */
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.cart-item-img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  margin-right: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-course-info p {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.cart-delete-btn{
+  align-self: flex-end;
+  background-color: #ea7911;
+}
+
+.cart-delete-btn:hover{
+  background-color: #c40606;
+}
+
+.cart-delete-btn i {
+  margin-right: 5px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #333;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+
+.list-btn-container {
+  display: flex;
+  justify-content: center;
+  /* justify-content: space-between; */
+  
+}
+
+.list-btn-container button {
+  margin: 5px 25px; 
+  font-size: 14px;
+  
+
+}
+
+.list-detail {
+  background-color: #d3480d;
+}
+
+.list-detail:hover {
+  background-color: #ff2600;
+}
