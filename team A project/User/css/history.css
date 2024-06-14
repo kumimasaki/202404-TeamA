@@ -12,11 +12,6 @@
 
 body {
   background-color: #FFE1C6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
- 
 }
 
 
@@ -29,9 +24,6 @@ main  {
   /* 子要素を横方向に中央に配置する設定。 */
   align-items: center;
   padding: 15px;
-  flex-grow: 1; 
-  padding-bottom: 100px;
-  flex: 1;
 
 }
 
@@ -118,21 +110,19 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px 0;
+  bottom: 0;
+  width: 100%;
 } 
 
 footer small {
   font-size: 0.8em;
 }
 
-.title{
-  font-size: 25px;
-  margin: 25px;
-}
 
 /* すべてのボタン */
 button {
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 18px;
   border: none;
   border-radius: 5px;
   /* マウス様子 */
@@ -147,173 +137,152 @@ button {
 button:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: #1abc22;
-} 
+  background-color: #45a049;
+}
 
-.btn-container{
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
- 
-.btn-container button {
-  margin: auto 10%;
-  font-size: 18px;
-}
- 
-.back {
+.back-btn {
   background-color: #846d6d;
   color: #fff;
+  font-size: 18px;
+ 
 }
 
-.back:hover {
+.back-btn:hover {
   background-color: #787575;
 }
 
-
+.back-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* 他の部分 */
-.my-page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.order-container{
+  max-width: 600px;
 }
 
-.my-page-item {
+.order {
+background-color: #daa640;
+width: 600px;
+padding: 10px;
+margin: 20px auto;
+font-size: 20px;
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  /* background-color: #d4d1d1; */
+  font-size: 20px;
+}
+
+
+.order-details {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.order-details p{
+  padding: 5px;
+  margin-bottom: 5px ;
+  background-color: #fff;
+}
+
+.order-item span{
+  margin-right: 25px;
+}
+
+.order-item {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.total-buy {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  width: 30%; 
-  margin: 0 10px; 
-  padding: 10px; 
- background-color: rgb(228, 197, 160);
-  border-radius: 10px; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  width: 100%;
+  margin-top: 10px;
+ 
 }
 
-.my-page-item img {
-  object-fit: cover; 
-  width: 200px; 
-  height: 200px; 
-  margin-bottom: 20px;
+.total-buy p {
+  /* background-color: #fff; */
+  padding: 3px;
+  margin: 5px;
 }
 
-.my-page-item a {
-  text-decoration: none;
-  color: #635d53;
-  font-size: 18px;
-  font-weight: 600; 
-  transition: color 0.3s ease, text-decoration 0.3s ease; /*効果 */
-  margin-bottom: 10px;
+.detail-btn {
+  text-align: center; 
+  margin-top: 10px;
+}
+
+.title{
+  font-size: 20px;
+}
+
+/* order-history-detail 注文詳細page*/
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 
-a:hover {
-  text-decoration: none;
-  color: rgb(221, 137, 28);
-}
-
-
-/* product-like page */
-.cart-item {
+.buy-item {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.cart-item-img {
+.buy-item-img {
   width: 260px;
   height: 180px;
   object-fit: cover;
-  margin-right: 30px;
+  border-radius: 5px;
+  margin-right: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cart-course-info {
+
+.buy-course-info {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.cart-course-info p {
-  margin: 10px 0;
-  font-size: 20px;
+.buy-course-info p {
+  margin: 5px 0;
 }
 
-.cart-delete-btn{
-  align-self: flex-end;
-  background-color: #ea7911;
+ul{
+  /* デフォルトの箇条書きの点を削除する */
+  list-style-type: none; 
 }
 
-.cart-delete-btn:hover{
-  background-color: #c40606;
-}
-
-.cart-delete-btn i {
-  margin-right: 5px;
-}
-
-hr {
-  border: none;
-  height: 2px;
-  background-color: #333;
+.total-buy-container {
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
-  margin-bottom: 25px;
 }
 
-.list-btn-container {
-  display: flex;
-  justify-content: center;
-
-.list-btn-container {
-  display: flex;
-  justify-content: center;
-  /* justify-content: space-between; */
-  
+.total-buy-container p {
+  background-color:burlywood;
+  font-size: 18px;
+  padding: 4px;
+  margin-left: 10px;
 }
 
-.list-btn-container button {
-  margin: 5px 25px; 
-  font-size: 14px;
-  
-
-}
-
-.list-detail {
-  background-color: #d3480d;
-}
-
-.list-detail:hover {
-  background-color: #ff2600;
-}
-
-
-/* user-information page */
-.info-form {
-  flex-direction: column;
- 
-}
-
-.info-form div {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  width: 400px;
- 
-}
-
-.info-form label {
-  width: 120px;
-  text-align: right;
-  margin-right: 1rem;
-}
-
-.info-form input {
-outline: none;
-}
-
-.btn-container {
-  margin-top: 2rem;
+.buy-course-info p {
+  font-size: 20px;
 }

@@ -203,7 +203,6 @@ button:hover {
   }
 
   /* ここからはproduct_listのcss */
-
   
 .title h2 {
   margin-top: 30px;
@@ -319,4 +318,51 @@ hr {
 .cart-btn-container button{
   font-size: 18px;
   margin: 30px 70px;
+}
+
+.option {
+  margin: 20px;
+  display: flex;
+  /* 子要素を横方向に中央に配置する設定。 */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option input {
+  margin-right: 10px;
+}
+
+
+/* payment-confirm page */
+.confirm-contents-container{
+  display: flex;
+  justify-content: center;
+}
+
+ul{
+  /* デフォルトの箇条書きの点を削除する */
+  list-style-type: none; 
+}
+
+li {
+  margin: 15px 0; 
+}
+
+.payment-confirm-selection{
+ display: inline-block;
+ background-color: aquamarine;
+ padding: 20px;
+ margin: auto 35% 2% 20%;
+ font-size: 18px;
+}
+
+.confirm-total-money{
+  display: inline-block;
+}
+
+.success-message{
+  background-color: aquamarine;
+  font-size: 30px;
+  margin: 5% auto 3%;
+  padding: 80px;
 }
