@@ -21,7 +21,7 @@ public class PaymentController {
 	private ProductService productService;
 	
 	// payment_selection.htmlを表示する
-    @GetMapping("/user/payment_selection")
+    @GetMapping("/user/payment/selection")
     public String getPaymentSelectionPage(Model model) {
 		// セッションからログインしている人の情報を取得
 		UsersEntity usersEntity = (UsersEntity) session.getAttribute("loginUserInfo");
@@ -40,13 +40,9 @@ public class PaymentController {
     public String choosePaymentMethod(@RequestParam("payment") String paymentMethod, Model model) {
         // ユーザーが選択さた支払い方法をセッションに保存
     	session.setAttribute("paymentMethod", paymentMethod);
-    	// もし、クレジットカード決済を選択した場合は、クレジットカード情報入力フォームに戻す
-        if ("credit_card".equals(paymentMethod)) {
-        	return "redirect:/user/save_credit_card";
-        } else {
-        	// そうでない場合
-            return "redirect:/user/payment_confirm";
-        }
+    	// クレジットカード決済を選択した場合は、クレジットカード情報入力フォームに戻す
+        model.addAttribute("payment", paymentMethod);
+        return "user/payment_selection.html";
     }
     
     // ユーザーが入力されたクレジットカード情報を保存する処理
@@ -61,6 +57,6 @@ public class PaymentController {
         session.setAttribute("expiryDate", expiryDate);
         session.setAttribute("cvv", cvv);
         // payment_confirmにリダイレクトする
-        return "redirect:/user/payment_confirm";
+        return "redirect:/user/payment/confirm";
     }
 }
