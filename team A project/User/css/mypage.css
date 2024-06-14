@@ -12,6 +12,11 @@
 
 body {
   background-color: #FFE1C6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+ 
 }
 
 
@@ -26,6 +31,7 @@ main  {
   padding: 15px;
   flex-grow: 1; 
   padding-bottom: 100px;
+  flex: 1;
 
 }
 
@@ -257,6 +263,9 @@ hr {
   margin-bottom: 25px;
 }
 
+.list-btn-container {
+  display: flex;
+  justify-content: center;
 
 .list-btn-container {
   display: flex;
@@ -278,4 +287,33 @@ hr {
 
 .list-detail:hover {
   background-color: #ff2600;
+}
+
+
+/* user-information page */
+.info-form {
+  flex-direction: column;
+ 
+}
+
+.info-form div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 400px;
+ 
+}
+
+.info-form label {
+  width: 120px;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.info-form input {
+outline: none;
+}
+
+.btn-container {
+  margin-top: 2rem;
 }
