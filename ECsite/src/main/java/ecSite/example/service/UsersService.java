@@ -80,4 +80,19 @@ public class UsersService {
     	usersDao.save(notConfirmedUser);
 		notConfirmedUser = null;
     }
+    
+
+    //ユーザー情報更新処理
+    public boolean updateUserInformation(Long userId, String userName, String userEmail) {
+    	//userが存在する場合だけ、情報が更新できます
+    	UsersEntity usersEntity = usersDao.findByUserId(userId);
+    	if(usersEntity == null) {
+    		return false;
+    	}else {
+	    	usersEntity.setUserName(userName);
+	    	usersEntity.setUserEmail(userEmail);
+	    	usersDao.save(usersEntity);
+	    	return true;
+    	}
+}
 }
