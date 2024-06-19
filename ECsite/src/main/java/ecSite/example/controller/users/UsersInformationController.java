@@ -42,7 +42,7 @@ public class UsersInformationController {
 		UsersEntity usersEntity = (UsersEntity) session.getAttribute("loginUserInfo");
 		//もし account == null だったら、login画面にリダイレクトする
 		if (usersEntity == null) {
-			return "redirect:/user/login.html";
+			return "redirect:/user/login";
 		} else {
 			//そうでない場合、保存処理をする
 	        usersService.updateUserInformation(usersEntity.getUserId(),userName, userEmail);
