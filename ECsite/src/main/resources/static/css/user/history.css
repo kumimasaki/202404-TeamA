@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* 共通部分 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body {
+  background-color: #FFE1C6;
+}
+
+
+main  {
+  display: flex;
+   /* 子要素を縦方向（上から下）に並べる */
+   flex-direction: column;
+  /* 子要素を(縦方向)に中央に配置する */
+  justify-content: center;
+  /* 子要素を横方向に中央に配置する設定。 */
+  align-items: center;
+  padding: 15px;
+
+}
+
+header {
+  background-color: #F7C242; 
+  padding: 10px 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-items {
+  display: flex;
+  margin-left: 10px;
+}
+
+.left-items img {
+  width: 100px; 
+  height:100px; 
+  margin-left: 10px;
+}
+
+.left-items p {
+  margin: 40px 0 0 0;
+  font-size: 24px;
+  color: white; 
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.right-items {
+  display: flex;
+  margin-right: 20px; 
+}
+
+.right-items li{
+  color: #fff;
+  margin: 0 15px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.right-items i {
+  color: #847d6f;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.dropdown {
+  display: none; 
+  position: absolute; 
+  background-color: #F7C242; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  z-index: 1; 
+  right: 0; 
+  min-width: 180px;
+}
+
+.dropdown li {
+  display: flex;
+  font-size: 20px;
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown li i {
+  margin-right: 10px;
+}
+
+.user-menu:hover .dropdown {
+  display: block;
+}
+
+footer {
+  background-color: #F7C242;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  bottom: 0;
+  width: 100%;
+} 
+
+footer small {
+  font-size: 0.8em;
+}
+
+
+/* すべてのボタン */
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  /* マウス様子 */
+  cursor: pointer;
+  /* 効果 */
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #4CAF50;
+  color: white;
+  margin: 7px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #45a049;
+}
+
+.back-btn {
+  background-color: #846d6d;
+  color: #fff;
+  font-size: 18px;
+ 
+}
+
+.back-btn:hover {
+  background-color: #787575;
+}
+
+.back-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 他の部分 */
+.order-container{
+  max-width: 600px;
+}
+
+.order {
+background-color: #daa640;
+width: 600px;
+padding: 10px;
+margin: 20px auto;
+font-size: 20px;
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  /* background-color: #d4d1d1; */
+  font-size: 20px;
+}
+
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.order-details p{
+  padding: 5px;
+  margin-bottom: 5px ;
+  background-color: #fff;
+}
+
+.order-item span{
+  margin-right: 25px;
+}
+
+.order-item {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.total-buy {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+ 
+}
+
+.total-buy p {
+  /* background-color: #fff; */
+  padding: 3px;
+  margin: 5px;
+}
+
+.detail-btn {
+  text-align: center; 
+  margin-top: 10px;
+}
+
+.title{
+  font-size: 20px;
+}
+
+/* order-history-detail 注文詳細page*/
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+.buy-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.buy-item-img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.buy-course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-course-info p {
+  margin: 5px 0;
+}
+
+ul{
+  /* デフォルトの箇条書きの点を削除する */
+  list-style-type: none; 
+}
+
+.total-buy-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.total-buy-container p {
+  background-color:burlywood;
+  font-size: 18px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+.buy-course-info p {
+  font-size: 20px;
+}

@@ -27,6 +27,10 @@ public interface UsersDao extends JpaRepository<UsersEntity, Long> {
 	// 用途：パスワード変更するときに、入力したメールアドレスとユーザー名が一致してるときだけデータを取得する
 	UsersEntity findByUserNameAndUserEmail(String userName, String userEmail);
 	
+	// SELECT * FROM users WHERE user_id = ?
+	// 用途：userIdを通じてユーザー情報を取得
+	UsersEntity findByUserId(Long userId);
+	
 	// user情報一覧を取得
 	List<UsersEntity> findAll();
 }
