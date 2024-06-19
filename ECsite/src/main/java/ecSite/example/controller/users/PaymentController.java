@@ -17,9 +17,6 @@ public class PaymentController {
 	@Autowired
 	private HttpSession session;
 	
-	@Autowired
-	private ProductService productService;
-	
 	// payment_selection.htmlを表示する
     @GetMapping("/user/payment/selection")
     public String getPaymentSelectionPage(Model model) {
@@ -30,6 +27,8 @@ public class PaymentController {
 			return "redirect:/user/login";
 		} else {
 			// そうでない場合
+            String paymentMethod = (String) session.getAttribute("paymentMethod");
+            model.addAttribute("payment", paymentMethod);
 			return "user/payment_selection.html";
 		}
 
@@ -42,7 +41,7 @@ public class PaymentController {
     	session.setAttribute("paymentMethod", paymentMethod);
     	// クレジットカード決済を選択した場合は、クレジットカード情報入力フォームに戻す
         model.addAttribute("payment", paymentMethod);
-        return "user/payment_selection.html";
+        return "redirect:/user/payment/confirm";
     }
     
     // ユーザーが入力されたクレジットカード情報を保存する処理
@@ -58,5 +57,21 @@ public class PaymentController {
         session.setAttribute("cvv", cvv);
         // payment_confirmにリダイレクトする
         return "redirect:/user/payment/confirm";
+    }
+    
+    // payment_confirm.htmlを表示する
+    @GetMapping("/user/payment/confirm")
+    public String getPaymentConfirmPage(Model model) {
+		// セッションからログインしている人の情報を取得
+		UsersEntity usersEntity = (UsersEntity) session.getAttribute("loginUserInfo");
+		String paymentMethod = (String) session.getAttribute("paymentMethod");
+		// もし、usersEntity==null ログイン画面にリダイレクトする
+		if(usersEntity == null) {
+			return "redirect:/user/login";
+		} else {
+			// そうでない場合
+            model.addAttribute("payment", paymentMethod);
+			return "user/payment_confirm.html";
+		}
     }
 }

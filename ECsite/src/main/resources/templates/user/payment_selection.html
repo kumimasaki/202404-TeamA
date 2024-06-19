@@ -6,21 +6,26 @@
     <title>payment_selection</title>
     <link rel="stylesheet" th:href="@{/css/user/payment.css}">
 	<script>
-		// クレジットカード情報フォームの表示/非表示を切り替える関数
+	    // クレジットカード情報フォームの表示/非表示を切り替える関数
 	    function toggleCreditCardForm() {
 	        var creditCardRadio = document.getElementById('credit_card');
 	        var creditCardForm = document.getElementById('creditCardForm');
-			// クレジットカードが選択された場合、フォームを表示する
+	        // クレジットカードが選択された場合、フォームを表示する
 	        creditCardForm.style.display = creditCardRadio.checked ? 'block' : 'none';
 	    }
-		
-		// キャンセルボタンをクリックしたときにクレジットカード情報フォームを非表示にする関数
+
+	    // キャンセルボタンをクリックしたときにクレジットカード情報フォームを非表示にする関数
 	    function cancelCreditCard() {
 	        var creditCardRadio = document.getElementById('credit_card');
 	        var creditCardForm = document.getElementById('creditCardForm');
 	        creditCardForm.style.display = 'none';
 	        creditCardRadio.checked = false;
 	    }
+
+	    // ページが読み込まれたときにクレジットカード情報フォームの表示/非表示を設定する関数
+	    document.addEventListener("DOMContentLoaded", function() {
+	        toggleCreditCardForm();
+	    });
 	</script>
 </head>
 <body>
@@ -62,11 +67,11 @@
 				            <label for="bank_transfer"><i class="fa-solid fa-building-columns"></i>銀行振込</label><br>
 				        </div>
 				        <div class="option">
-				            <input type="radio" id="credit_card" name="payment" value="credit_card" th:checked="${payment == 'credit_card'}">
+				            <input type="radio" id="credit_card" name="payment" value="credit_card" onclick="toggleCreditCardForm()">
 				            <label for="credit_card"><i class="fa-solid fa-credit-card"></i>クレジットカード</label><br>
 				        </div>
 						<!-- クレジットカード情報フォーム、初期状態は非表示 -->
-						<div id="creditCardForm" th:if="${payment == 'credit_card'}" style="display:none;">
+						<div id="creditCardForm" style="display:none;">
 						    <h3>クレジットカード情報</h3>
 						    <form th:action="@{/user/save_credit_card}" method="post">
 						        <label for="cardNumber">カード番号:</label>
@@ -101,11 +106,5 @@
     </footer>
     <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
     <script src="js/code.js"></script>
-	<script>
-	    // ページ読み込み時にクレジットカード情報フォームの表示/非表示を設定する
-	    document.addEventListener("DOMContentLoaded", function() {
-	        toggleCreditCardForm();
-	    });
-	</script>
 </body>
 </html>
