@@ -31,8 +31,9 @@
         <p>ユーザー情報</p>
     </div>
     <form class="info-form" id="userInfoForm" th:action="@{/user/information/process}" method="post" enctype="multipart/form-data">
-      <label for="username">ユーザー名</label>
-      <input type="text" id="userName" name="userName" th:value="${userName}">
+  <div>
+		<label for="username">ユーザー名</label>
+        <input type="text" id="userName" name="userName" th:value="${userName}">
   </div>
   <div>
       <label for="email">メールアドレス</label>

@@ -54,4 +54,20 @@ public class UsersInformationController {
 	        return "user/user_information.html";
 	    }
 	}
+	
+	//	my page 画面表示
+	@GetMapping("/user/mypage")
+	public String getUserMyPage(Model model) {
+		// sessionからloginしている人の情報を取得
+		UsersEntity usersEntity = (UsersEntity) session.getAttribute("loginUserInfo");
+		//もし account == null だったら、login画面にリダイレクトする
+		if(usersEntity == null) {
+			return "redirect:/user/login";
+		}else {
+			//そうでない場合、mypage画面のhtmlを表示、loginしている人の情報を画面に表示
+			model.addAttribute("userName", usersEntity.getUserName());
+			return "user/mypage.html";
+		}
+		
+	}
 }
