@@ -79,13 +79,28 @@ public class CartController {
         CourseEntity product = productService.getProductById(courseId);
         // もし、prdouctが削除されたときに,errorメッセージを商品ページに渡して、product_list.htmlを表示する
 		if(product == null) {
-			model.addAttribute("error", "商品は存在しません");
             return "redirect:/user/product/list";
 		}
 		// セッションからcartのデータを取得,又はcartが存在しない場合(cart == null) ,新しいcartを作る
 		List<CourseEntity> cart = (List<CourseEntity>) session.getAttribute("cart");
 		if (cart == null) {
 			cart = new ArrayList<>();
+		}
+		boolean duplicated = false;
+		// もし、カートにcourseIdが重複したら、alertを表示する、商品をカートに入れない
+		for (CourseEntity tmp : cart) {
+			if (tmp.getCourseId().equals(courseId)) {
+				duplicated = true;
+				break;
+			}
+		}
+
+		if(duplicated) {
+			List<CourseEntity> productList = productService.selectAllProductList(usersEntity.getUserId());
+			model.addAttribute("userName", usersEntity.getUserName());
+			model.addAttribute("productList", productList);
+			model.addAttribute("message",true);
+			return "user/product_list.html";
 		}
 		// addメソッドでproductオブジェクトをcart Listに入れる
 		// セッションでcartを設置する
@@ -114,6 +129,26 @@ public class CartController {
         }
         // 削除後のカートページを表示する
         return "redirect:/user/cart";
+	}
+	
+	// 決済ページに遷移api, Cartの中身をチェック
+	@PostMapping("/cart-checkout")
+	public String checkout(Model model) {
+		// セッションからログインしている人の情報を取得
+		UsersEntity usersEntity = (UsersEntity) session.getAttribute("loginUserInfo");
+		// もし、usersEntity==null ログイン画面にリダイレクトする
+		if (usersEntity == null) {
+            return "redirect:/user/login";
+        } else {
+    	// セッションからcartのデータを取得
+        List<CourseEntity> cart = (List<CourseEntity>) session.getAttribute("cart");
+        // もし、cart sessionは存在しない、そしてcartに商品が入ってない状態だったら、決済ページに遷移できません。
+        if (cart == null || cart.isEmpty()) {
+            model.addAttribute("empty", true);
+            return "redirect:/user/cart";
+        }
+        return "redirect:/user/payment_selection";
+        }     	
 	}
 	
 }

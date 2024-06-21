@@ -6,7 +6,6 @@
     <title>product_list</title>
     <link rel="stylesheet" th:href="@{/css/user/product.css}">
 </head>
-
 <body>
 	<header>
 		<nav class="nav-list">
@@ -19,7 +18,7 @@
 	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
 	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
 	            <li class="user-menu">
-	            <i class="fa-solid fa-user-tie"><a th:href="@{/user/mypage}"></i>マイページ</a>
+	            <a th:href="@{/user/mypage}"><i class="fa-solid fa-user-tie"></i>マイページ</a>
 	            	<ul class="dropdown">
 	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
 	                </ul>
@@ -32,12 +31,14 @@
             <h2>講座一覧</h2>
         </div>
 		<p class="empty-message" th:if="${empty}">ただ今商品はございません</p>
-		<p class="error-message" th:if="${message}">既に気に入り一覧に追加されています</p> 
+		
 		<div th:if="${errorMessage}">
 		        <p class="empty-message" th:text="${error}" ></p>
 		    </div>
+			
+		<p class="empty-message" th:if="${message}">カートにすでに同じ商品を入れました</p>
         <div class="course-list">
-            <form th:each="product:${productList}" method="post" id="form-addToCart" th:action="@{?}" meenctype="multipart/form-data" class="course-item">
+            <form th:each="product:${productList}" method="post" th:action="@{/add-to-cart/process}" meenctype="multipart/form-data" class="course-item">
                 <img th:src="@{/course-img/{image}(image=${product.courseImage})}" alt="" class="list-course-img">
                 <div>
                     <p th:text="${product.courseName}"></p>
@@ -47,37 +48,10 @@
                 </div>
                 <div class="list-btn-container">
 					<input type="hidden" name="courseId" th:value="${product.courseId}" />
-                    <button type="submit"  onClick="alert('カートに追加しました')" th:formaction="@{/add-to-cart/process}">カートに追加</button>
+                    <button type="submit"  onclick="alert('カートに商品を入れました')">カートに追加</button>
                     <button class="list-detail" type="button" th:onclick="|location.href='/user/product/detail/' + ${product.courseId}|">詳細</button>
 					<button type="submit"  th:formaction="@{/add-favourite/process}">♡</button>
-					</div>
-            </form>
-				
-            <form action="#" method="post" enctype="multipart/form-data" class="course-item">
-                <img src="img/me.png" alt="" class="list-course-img">
-                <div>
-                    <p>JavaScript初心者コース</p>
-                </div>
-                <div>
-                    <p>値段 : 12000円</p>
-                </div>
-                <div class="list-btn-container">
-                    <button>カートに追加</button>
-                    <button class="list-detail">詳細</button>
-                </div>
-            </form>
-            <form action="#" method="post" enctype="multipart/form-data" class="course-item">
-                <img src="img/me.png" alt="" class="list-course-img">
-                <div>
-                    <p>CSS初心者コース</p>
-                </div>
-                <div>
-                    <p>値段 : 12000円</p>
-                </div>
-                <div class="list-btn-container">
-                    <button>カートに追加</button>
-                    <button class="list-detail">詳細</button>
-                </div>
+				</div>
             </form>
         </div>
     </main>

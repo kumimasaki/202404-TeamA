@@ -30,7 +30,7 @@ public class AdminRegisterController {
 			@RequestParam String adminPassword, Model model) {
 		// もし、createAdminがtrueだったら、 admin_register_confirm.htmlに移動
 		// そうでない場合admin_register.htmlにとどまります
-		if (adminService.userCheck( adminEmail)) {
+		if (adminService.userCheck(adminEmail)) {
 			model.addAttribute("adminName", adminName);
 			model.addAttribute("adminEmail", adminEmail);
 			session.setAttribute("adminName", adminName);
