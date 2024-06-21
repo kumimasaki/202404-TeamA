@@ -5,46 +5,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>my-page</title>
-  <link rel="stylesheet" href="css/mypage.css">
+  <link rel="stylesheet" th:href="@{/css/user/mypage.css}">
 </head>
 
 <body>
-  <header>
-    <nav class="nav-list">
-      <div class="left-items">
-        <li><img src="img/IT_logo.png" alt=""></li>
-        <li>
-          <p class="site-name">ITコース販売サイト</p>
-        </li>
-      </div>
-      <div class="right-items">
-        <li>ユーザー名</li>
-        <li><i class="fa-solid fa-shop"></i>講座一覧</li>
-        <li><i class="fa-solid fa-cart-shopping"></i>カート一覧</li>
-        <li class="user-menu">
-          <i class="fa-solid fa-user-tie"></i>マイページ
-          <ul class="dropdown">
-            <li><i class="fa-solid fa-right-from-bracket"></i>ログアウト</li>
-          </ul>
-        </li>
-      </div>
-    </nav>
-  </header>
+	<header>
+	  <nav class="nav-list">
+	      <div class="left-items">
+	          <li><img th:src="@{/img/IT_logo.png}" alt=""></li>
+	          <li><p class="site-name">ITコース販売サイト</p></li>
+	      </div>
+		<div class="right-items">
+			    <li th:text="${userName}"></li>
+			    <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
+			    <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
+			    <li class="user-menu">
+			    <i class="fa-solid fa-user-tie"></i>マイページ
+			    <ul class="dropdown">
+			    <li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
+			        </ul>
+			            </li>
+			 </div>
+		</nav>
+   </header>
   <main>
     <div class="title">
       <p>マイページ</p>
     </div>
     <div class="my-page-container">
     <div class="my-page-item">
-      <img src="img/user_man.png" alt="" class="item-img">
-      <a href="">ユーザー情報一覧</a>
+      <img th:src="@{/img/user_man.png}" alt="" class="item-img">
+      <a th:href="@{/user/information}">ユーザー情報一覧</a>
     </div>
     <div class="my-page-item">
-      <img src="img/heart.png" alt="" class="item-img">
-      <a href="">お気に入り</a>
+      <img th:src="@{/img/heart.png}" alt="" class="item-img">
+      <a th:href="@{/user/favourite}">お気に入り</a>
     </div>
     <div class="my-page-item">
-      <img src="img/receipt.png" alt="" class="item-img">
+      <img th:src="@{/img/receipt.png}" alt="" class="item-img">
       <a href="">購入履歴一覧</a>
     </div>
   </div>
