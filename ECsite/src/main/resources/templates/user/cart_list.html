@@ -20,7 +20,7 @@
 	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
 	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
 	            <li class="user-menu">
-	          <i class="fa-solid fa-user-tie"><a th:href="@{/user/mypage}"></i>マイページ</a>
+	            <a th:href="@{/user/mypage}"><i class="fa-solid fa-user-tie"></i>マイページ</a>
 	            	<ul class="dropdown">
 	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
 	                </ul>
@@ -48,7 +48,7 @@
 			<p>合計数 : <span th:text="${totalQuantity}"></span>点</p>
             <p>合計金額 : <span th:text="${totalPrice}"></span>円</p>
         </div>
-        <form action="#" method="post" enctype="multipart/form-data" class="cart-btn-container">
+        <form th:action="@{/cart-checkout}" method="post" enctype="multipart/form-data" class="cart-btn-container">
             <button type="submit">購入</button>
             <button class="back" onClick="location.href='/user/product/list'" type="button">戻る</button>
         </form>

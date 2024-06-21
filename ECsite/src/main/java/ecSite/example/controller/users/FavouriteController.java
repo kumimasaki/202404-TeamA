@@ -78,7 +78,7 @@ public class FavouriteController {
 		//favouriteが存在しない場合(favourite == null)
 		// ,新しいfavouritelistを作る
 		List<CourseEntity> favourite = (List<CourseEntity>) session.getAttribute("favourite");
-		if (favourite == null && favouriteService.insertFavourite(courseId, usersEntity.getUserId())) {
+		if (favouriteService.insertFavourite(courseId, usersEntity.getUserId())) {
 			favourite = new ArrayList<>();
 			// addメソッドでproductオブジェクトをfavourite Listに入れる
 			// セッションでfavouriteを設置する

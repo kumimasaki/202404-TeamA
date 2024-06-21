@@ -5,28 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>payment_selection</title>
     <link rel="stylesheet" th:href="@{/css/user/payment.css}">
-	<script>
-	    // クレジットカード情報フォームの表示/非表示を切り替える関数
-	    function toggleCreditCardForm() {
-	        var creditCardRadio = document.getElementById('credit_card');
-	        var creditCardForm = document.getElementById('creditCardForm');
-	        // クレジットカードが選択された場合、フォームを表示する
-	        creditCardForm.style.display = creditCardRadio.checked ? 'block' : 'none';
-	    }
-
-	    // キャンセルボタンをクリックしたときにクレジットカード情報フォームを非表示にする関数
-	    function cancelCreditCard() {
-	        var creditCardRadio = document.getElementById('credit_card');
-	        var creditCardForm = document.getElementById('creditCardForm');
-	        creditCardForm.style.display = 'none';
-	        creditCardRadio.checked = false;
-	    }
-
-	    // ページが読み込まれたときにクレジットカード情報フォームの表示/非表示を設定する関数
-	    document.addEventListener("DOMContentLoaded", function() {
-	        toggleCreditCardForm();
-	    });
-	</script>
 </head>
 <body>
 	<header>
@@ -40,7 +18,7 @@
 	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
 	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
 	            <li class="user-menu">
-	          <i class="fa-solid fa-user-tie"><a th:href="@{/user/mypage}"></i>マイページ</a>
+	            <a th:href="@{/user/mypage}"><i class="fa-solid fa-user-tie"></i>マイページ</a>
 	            	<ul class="dropdown">
 	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
 	                </ul>
@@ -60,41 +38,36 @@
 
             <div class="pay-selection">
                 <p>お支払い方法の選択:</p>
-				<form th:action="@{/user/choose_payment}" method="post">
+				<form th:action="@{/user/payment_confirm}" method="post">
 				    <div class="selection-options">
 				        <div class="option">
-				            <input type="radio" id="bank_transfer" name="payment" value="bank_transfer">
+				            <input type="radio" id="bank_transfer" name="paymentMethod" value="銀行振込">
 				            <label for="bank_transfer"><i class="fa-solid fa-building-columns"></i>銀行振込</label><br>
 				        </div>
 				        <div class="option">
-				            <input type="radio" id="credit_card" name="payment" value="credit_card" onclick="toggleCreditCardForm()">
+				            <input type="radio" id="credit_card" name="paymentMethod" value="クレジットカード" required>
 				            <label for="credit_card"><i class="fa-solid fa-credit-card"></i>クレジットカード</label><br>
 				        </div>
-						<!-- クレジットカード情報フォーム、初期状態は非表示 -->
-						<div id="creditCardForm" style="display:none;">
+						
+
+					<!--	<div th:if="${payment == 'credit_card'}">
 						    <h3>クレジットカード情報</h3>
-						    <form th:action="@{/user/save_credit_card}" method="post">
-						        <label for="cardNumber">カード番号:</label>
-						        <input type="text" id="cardNumber" name="cardNumber"><br>
-						        <label for="expiryDate">有効期限:</label>
-						        <input type="text" id="expiryDate" name="expiryDate"><br>
-						        <label for="cvv">CVV:</label>
-						        <input type="text" id="cvv" name="cvv"><br>
-						        <div class="btn-container">
-						            <!-- キャンセルボタン、クリックするとクレジットカード情報フォームを非表示にする -->
-						            <button type="button" class="back" onclick="cancelCreditCard()">キャンセル</button>
-						            <!-- 確認ボタン、クレジットカード情報を保存する -->
-						            <button type="submit">確認</button>
-						        </div>
-						    </form>
-						</div>
+						    <label for="cardNumber">カード番号:</label>
+						    <input type="text" id="cardNumber" name="cardNumber"><br>
+						    <label for="expiryDate">有効期限:</label>
+						    <input type="text" id="expiryDate" name="expiryDate"><br>
+						    <label for="cvv">CVV:</label>
+						    <input type="text" id="cvv" name="cvv"><br>
+						</div> 
+					-->
+						
 				        <div class="option">
-				            <input type="radio" id="paypay_online" name="payment" value="paypay_online">
+				            <input type="radio" id="paypay_online" name="paymentMethod" value="PayPayオンライン">
 				            <label for="paypay_online"><i class="fa-brands fa-paypal"></i>PayPayオンライン</label>
 				        </div>
 				    </div>
 				    <div class="btn-container">
-				        <button type="button" class="back">戻る</button>
+				        <button type="button" class="back" onclick="history.back();">戻る</button>
 				        <button type="submit">確定</button>
 				    </div>
 				</form>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>payment_success</title>
-    <link rel="stylesheet" href="/css/user/payment.css">
+    <link rel="stylesheet" th:href="@{/css/user/payment.css}">
 </head>
 <body>
 	<header>
@@ -18,7 +18,7 @@
 	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
 	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
 	            <li class="user-menu">
-	           <i class="fa-solid fa-user-tie"><a th:href="@{/user/mypage}"></i>マイページ</a>
+	            <a th:href="@{/user/mypage}"><i class="fa-solid fa-user-tie"></i>マイページ</a>
 	            	<ul class="dropdown">
 	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
 	                </ul>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="btn-container">
-            <button>講座一覧へ</button>
+            <button onClick="location.href='/user/product/list'">講座一覧へ</button>
             <button class="myPage">マイページへ</button>
         </div>
     </main>

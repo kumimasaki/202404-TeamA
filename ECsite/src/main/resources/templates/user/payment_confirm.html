@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>payment_confirm</title>
-    <link rel="stylesheet" href="/css/user/payment.css">
+    <link rel="stylesheet" th:href="@{/css/user/payment.css}">
 </head>
 <body>
 	<header>
@@ -18,7 +18,7 @@
 	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
 	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
 	            <li class="user-menu">
-	           <i class="fa-solid fa-user-tie"><a th:href="@{/user/mypage}"></i>マイページ</a>
+	            <a th:href="@{/user/mypage}"><i class="fa-solid fa-user-tie"></i>マイページ</a>
 	            	<ul class="dropdown">
 	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
 	                </ul>
@@ -37,27 +37,15 @@
             
             <div class="confirm-contents-container">
                 <ul>
-                    <li>
+                    <li th:each="item:${cart}">
                         <div class="cart-item">
-                            <img src="img/me.png" alt="" class="cart-item-img">
+                            <img th:src="@{/course-img/{image}(image=${item.courseImage})}" alt="" class="cart-item-img">
                             <div class="cart-course-info">
-                            <p>時間 : yyyy/mm/dd  12:00 ~ 14:00</p>
+                            <p>時間 : <span th:text="${item.startDate}"></span> <span th:text="${item.startTime}"></span> ~ <span th:text="${item.finishTime}"></span></p>
                        
-                            <p>HTML初心者コース</p>
+                            <p th:text="${courseName}"> </p>
                        
-                            <p>値段 : 12000円</p>
-                        </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cart-item">
-                            <img src="img/me.png" alt="" class="cart-item-img">
-                            <div class="cart-course-info">
-                            <p>時間 : yyyy/mm/dd  12:00 ~ 14:00</p>
-                       
-                            <p>HTML初心者コース</p>
-                        
-                            <p>値段 : 12000円</p>
+                           <p>値段 : <span th:text="${item.courseFee}"></span>円</p>
                         </div>
                         </div>
                     </li>
@@ -65,13 +53,15 @@
             </div>
             <hr>
             <div class="separate">
-                    <p class="payment-confirm">お支払い方法 :<i class="fa-solid fa-credit-card"></i>クレジットカード</p>
-                    <p class="total">合計金額 : 24000円</p>
+                    <p class="payment-confirm">お支払い方法 : <span th:text="${paymentMethod}"></span></p>
+                    <p class="total">合計数 : <span th:text="${totalQuantity}"></span>点 合計金額 : <span th:text="${totalPrice}"></span>円</p>
             </div>
-            <div class="btn-container">
-                <button class="back">戻る</button>
-                <button>決済確定</button>
-            </div>
+			<form th:action="@{/user/payment_success}" method="post">
+	            <div class="btn-container">
+	                <button class="back" type="button" onclick="history.back();">戻る</button>
+	                <button type="submit">決済確定</button>
+	            </div>
+			</form>
     </main>
     <footer>
         <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>

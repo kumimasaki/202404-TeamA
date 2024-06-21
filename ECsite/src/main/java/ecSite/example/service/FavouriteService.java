@@ -12,7 +12,7 @@ public class FavouriteService {
 	private FavouriteDao favouriteDao;
 
 	//講座の登録処理チェック
-	public boolean insertFavourite( Long courseId, Long userId) {
+	public boolean insertFavourite(Long courseId, Long userId) {
 		/*
 		 * もし、findByFavouriteIdが==nullだったら、 保存処理 
 		 * そうでない場合は false
