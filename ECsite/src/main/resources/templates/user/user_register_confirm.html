@@ -17,10 +17,10 @@
                 <div class="title">登録内容確認</div>
                 <form th:action="@{/user/register/process}" method="post">
                     <div class="confirm">
-                        <p>ユーザー名 : <span th:text="${notConfirmedUser.userName}"></p>
+                        <p>ユーザー名 : <span th:text="${notConfirmedUser.userName}"></span></p>
                     </div>
                     <div class="confirm">
-                        <p>メールアドレス : <span th:text="${notConfirmedUser.userEmail}"</p>
+                        <p>メールアドレス : <span th:text="${notConfirmedUser.userEmail}"></span></p>
                     </div>
                     <div class="button-gourp">
                         <button class="confirm-button" onclick="confirmRegister()">登録する</button>
