@@ -81,6 +81,11 @@ header {
   position: relative;
 }
 
+header .right-items li a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .right-items i {
   color: #847d6f;
   margin-right: 10px;
@@ -268,18 +273,11 @@ hr {
   justify-content: center;
 }
 
-.list-btn-container {
-  display: flex;
-  justify-content: center;
-  /* justify-content: space-between; */
-  
-}
 
 .list-btn-container button {
   margin: 5px 25px; 
   font-size: 14px;
   
-
 }
 
 .list-detail {

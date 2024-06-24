@@ -7,48 +7,48 @@
   <link rel="stylesheet" th:href="@{/css/user/mypage.css}">
 </head>
 <body>
-  <header>
-      <nav class="nav-list">
-          <div class="left-items">
-              <li><img th:src="@{/img/IT_logo.png}" alt=""></li>
-              <li><p class="site-name">ITコース販売サイト</p></li>
-          </div>
-		  <div class="right-items">
-		  	            <li th:text="${userName}"></li>
-		  	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
-		  	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
-		  	            <li class="user-menu">
-		  	            <i class="fa-solid fa-user-tie"></i>マイページ
-		  	            	<ul class="dropdown">
-		  	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
-		  	                </ul>
-		  	            </li>
-		  	         </div>
-      </nav>
-  </header>
-  <main>
-      <div class="title">
-        <p>お気に入り</p>
-      </div>
-	  <p class="empty-message" th:if="${empty}">気に入り商品はまだありません</p>
-	  <form th:each="item:${favourite}" th:action="@{/delete-Favourite}" method="post" enctype="multipart/form-data" class="cart-item">
-	      <img th:src="@{/course-img/{image}(image=${item.courseImage})}" alt="" class="cart-item-img">
-	      <div class="cart-course-info">
-	           <p>時間 : <span th:text="${item.startDate}"></span> <span th:text="${item.startTime}"></span> ~ <span th:text="${item.finishTime}"></span></p>
-	           <p th:text="${courseName}"></p>
-	           <p>値段 : <span th:text="${item.courseFee}"></span>円</p>
-	  		   <input type="hidden" name="courseId" th:value="${item.courseId}" />
-	           <button type="submit" class="cart-delete-btn"><i class="fa-solid fa-trash"></i>削除</button>
+	<header>
+		<nav class="nav-list">
+	    	<div class="left-items">
+	        	<li><img th:src="@{/img/IT_logo.png}" alt=""></li>
+	            <li><p class="site-name">ITコース販売サイト</p></li>
 	         </div>
-	  </form>
-      <hr>
-          <button class="return" onclick="history.back();" type="button">戻る</button>
-  </main>  
-  <footer>
-      <small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
-  </footer>
-  <script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
-  <script src="js/code.js"></script>
+	         <div class="right-items">
+	            <li th:text="${userName}"></li>
+	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
+	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
+	            <li class="user-menu">
+	            <a th:href="@{/user/mypage}"><i class="fa-solid fa-user-tie"></i>マイページ</a>
+	            	<ul class="dropdown">
+	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
+	                </ul>
+	            </li>
+	         </div>
+	    </nav>
+	</header>
+  	<main>
+		<div class="title">
+			<p>お気に入り</p>
+	    </div>
+		<p class="empty-message" th:if="${empty}">気に入り商品はまだありません</p>
+		<form th:each="item:${favourite}" th:action="@{/delete-Favourite}" method="post" enctype="multipart/form-data" class="cart-item">
+			<img th:src="@{/course-img/{image}(image=${item.courseImage})}" alt="" class="cart-item-img">
+		    <div class="cart-course-info">
+		    	<p>時間 : <span th:text="${item.startDate}"></span> <span th:text="${item.startTime}"></span> ~ <span th:text="${item.finishTime}"></span></p>
+		        <p th:text="${courseName}"></p>
+		        <p>値段 : <span th:text="${item.courseFee}"></span>円</p>
+		  		<input type="hidden" name="courseId" th:value="${item.courseId}" />
+				<button class="cart-delete-btn" type="button" th:onclick="|location.href='/user/product/detail/' + ${item.courseId}|"><i class="fa-solid fa-circle-info"></i>詳細</button>
+		        <button type="submit" class="cart-delete-btn"><i class="fa-solid fa-trash"></i>削除</button>
+		    </div>
+		</form>
+	    <hr>
+	    <button class="return" onclick="history.back();" type="button">戻る</button>
+	</main>  
+	<footer>
+		<small>copyright&copy;EC-site@2024 Team A-All right reserved</small>
+	</footer>
+	<script src="https://kit.fontawesome.com/06d9b8b269.js" crossorigin="anonymous"></script>
+	<script src="js/code.js"></script>
 </body>
-
 </html>

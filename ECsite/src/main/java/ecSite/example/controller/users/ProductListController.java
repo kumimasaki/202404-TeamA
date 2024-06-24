@@ -39,6 +39,7 @@ public class ProductListController {
 			if (productList.isEmpty()) {
 				model.addAttribute("empty", true);
 			}
+			model.addAttribute("message", false);
 			model.addAttribute("empty", false);
 			return "user/product_list.html";
 		}

@@ -20,7 +20,7 @@
 	            <li><a th:href="@{/user/product/list}"><i class="fa-solid fa-shop"></i>講座一覧</a></li>
 	            <li><a th:href="@{/user/cart}"><i class="fa-solid fa-cart-shopping"></i>カート一覧</a></li>
 	            <li class="user-menu">
-	            <i class="fa-solid fa-user-tie"></i>マイページ
+	            <a th:href="@{/user/mypage}"><i class="fa-solid fa-user-tie"></i>マイページ</a>
 	            	<ul class="dropdown">
 	                	<li><a th:href="@{/user/logout}"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></li>
 	                </ul>
@@ -54,7 +54,7 @@
             </div>
             <div class="btn-container">
 				<input type="hidden" name="courseId" th:value="${product.courseId}" />
-                <button class="add" onClick="cartCheck()"　>カートに追加</button>
+                <button class="add" onClick="cartCheck()">カートに追加</button>
 				<button class="back" onclick="history.back();" type="button">戻る</button>
             </div>
         </form>

@@ -79,17 +79,6 @@ form .row {
     border-radius: 5px 0 0 5px;
 }
 
-.remember {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-}
-
-.remember input {
-    margin-right: 10px;
-    width: auto;
-    
-}
 
 .button input {
     color: #fff;
@@ -157,7 +146,7 @@ form .button-group {
     color: #fff;
 }
 
-.confirm-btn:hover {
+.confirm-button:hover {
     background-color: #2266cb;
 }
 
@@ -167,7 +156,7 @@ form .button-group {
 }
 
 .return:hover {
-    background-color: #82d3a1;
+    background-color: #278f4f;
 }
 
 

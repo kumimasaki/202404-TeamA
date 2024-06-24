@@ -71,6 +71,11 @@ header {
     position: relative;
 }
 
+header .right-items li a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .right-items i {
     color: #847d6f;
     margin-right: 10px;

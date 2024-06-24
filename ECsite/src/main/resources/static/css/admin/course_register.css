@@ -65,11 +65,9 @@ footer small {
 
 form {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 20px;
     background-color: #FFD9D9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title p{
@@ -192,7 +190,10 @@ form {
 .return:hover {
     background-color: #278f4f;
 }
-
+.delete-form {
+    text-align: center;
+    margin-bottom: 80px;
+}
 .delete {
     width: 100px;
     height: 40px;

@@ -46,6 +46,7 @@ header {
 }
 
 body {
+    margin: 0; 
     background-color: #FFF1E4;
 }
 
@@ -182,6 +183,10 @@ footer small {
     border: 1px solid #B4E9B9;
     border-radius: 5px;
     cursor: pointer; 
+  }
+
+  .add-more button:hover {
+    background-color: #11931e;
   }
   
 
